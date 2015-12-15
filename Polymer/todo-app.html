@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<!-- Element Imports -->
+		<link rel="import" href="bower_components/polymer/polymer.html">
+		<link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
+		<link rel="import" href="bower_components/paper-menu/bower_components/paper-item/paper-item.html">
+		<link rel="import" href="bower_components/paper-input/paper-input.html">
+		<link rel="import" href="bower_components/paper-material/paper-material.html">
+		<link rel="import" href="bower_components/iron-icons/iron-icons.html">
+		<link rel="import" href="bower_components/paper-fab/paper-fab.html">
+	
+	</head>
+	
+	<dom-module id="myElement">
+		<style>
+			/*Style goes here*/
+		</style>
+		<template>
+			<!--Local DOM for your element -->
+			<paper-material class="todo" elevation="1">
+				<paper-checkbox checked="{{completed}}"></paper-checkbox>
+				<paper-fab hidden={{editing}}  icon="icons:create" on-tap="doEdit" mini></paper-fab>
+				<paper-fab hidden={{!editing}} icon="icons:done"   on-tap="doEdit" mini></paper-fab>
+				<paper-item hidden="{{editing}}" id="task">{{task}}</paper-item>
+				<paper-input id="edit" hidden="{{!editing}}" value="{{task}}"></paper-input>
+				<paper-item>Created by: <span>{{user}}</span></paper-item>
+				<paper-item>{{time}}</paper-item>
+			</paper-material> <!-- data bindings in local DOM -->
+		</template>
+	</dom-module>
+	<script>
+		Polymer({
+			is: "myElement",
+			properties: {
+			},
+			read: function(e){
+			}
+		});
+	</script>
+
+</html>
