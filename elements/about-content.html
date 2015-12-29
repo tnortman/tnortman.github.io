@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="import" href="../bower_components/polymer/polymer.html">
+	</head>
+	
+	<dom-module id="about-content">
+		<style>
+			.header{
+				font-family: 'Raleway', sans-serif;
+				font-weight: 300;
+				font-size: 3em;
+				margin-left: 2%;
+			}
+			.myPicImage{
+				width: 350px;
+				height: 350px;
+				border-radius: 200px;
+				-webkit-border-radius: 200px;
+				-moz-border-radius: 200px;
+				background: url('../img/timNortman.png') no-repeat;
+				box-shadow: 0 0 8px rgba(0,0,0,.8);
+				-webkit-box-shadow: 0 0 8px rgba(0,0,0,.8);
+				-moz-box-shadow: 0 0 8px rgba(0,0,0,.8);
+				background-position:-30px -25px;
+				margin: 10px;
+				@apply(--layout-end-justified);
+			}
+			.aboutContainer{
+				@apply(--layout-horizontal);
+				@apply(--layout-wrap);
+				background:#FFB59A;
+				border: 2px solid;
+			}
+			.flexchild{
+				@apply(--layout-flex);
+			}
+			.paper-material{
+				background:#0367F0;
+			}
+		</style>
+		<template>
+				<paper-material class="aboutContainer" elevation="1">
+					<p class="header flexchild">About Me</p>
+					<div class="myPicImage"></div>
+					
+				</paper-material>
+		</template>
+	</dom-module>
+	<script>
+		Polymer({
+			is:"about-content"
+		});
+	</script>
+</html>
