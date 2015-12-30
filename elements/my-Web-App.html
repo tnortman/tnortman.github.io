@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="import" href="../bower_components/polymer/polymer.html">
+		
+	</head>
+	
+	<dom-module id="my-Web-App">
+		<style>
+			.header{
+				font-family: 'Raleway', sans-serif;
+				font-weight: 700;
+				font-size: 3em;
+			}
+			.mainToolbar{
+				--paper-toolbar-background: #0367F0;
+				--paper-toolbar-sm-height: 100px;
+			}
+			.menuToolbar{
+				--paper-toolbar-background:#0367F0;
+				--paper-toolbar-sm-height: 100px;
+			}
+		</style>
+		
+		<template>
+			<paper-drawer-panel>
+				
+				<!--Drawer for navigation-->
+				<paper-header-panel drawer>
+					
+					<!--Header for toolbar-->
+					<paper-toolbar class="menuToolbar">
+						<div id="menuHeader" class="header">Menu</div>
+					</paper-toolbar>
+					
+					<!--Menu-->
+					<paper-menu on-click="navigate" attr-for-selected="page" selected="{{pageSelected}}">
+						
+						<paper-item page="about">
+							<paper-icon-button icon="social:person"></paper-icon-button>
+							<p>About Me</p>
+						</paper-item>
+						
+						<paper-item page="projects">
+							<paper-icon-button icon="image:style"></paper-icon-button>
+							<p>Projects</p>
+						</paper-item>
+						
+						<paper-item page="resume">
+							<paper-icon-button icon="icons:assignment"></paper-icon-button>
+							<p>Resume</p>
+						</paper-item>
+					
+					</paper-menu>
+					
+				</paper-header-panel>
+				
+				<!--Main body-->
+				<paper-header-panel main>
+					<paper-toolbar class="mainToolbar">
+						<paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+						<div class="header">Tim Nortman</div>
+					</paper-toolbar>
+					
+					<!--Main Content-->
+					<div class="content">
+						<iron-pages id="ironPageMainContent" attr-for-selected="data-route" selected="about">
+							<section data-route="about">
+								<about-content></about-content>
+							</section>
+							<section data-route="projects">
+								<projects-content></projects-content>
+							</section>
+							<section data-route="resume">
+								<resume-content></resume-content>
+							</section>
+						</iron-pages>
+					</div>
+				
+				</paper-header-panel>
+			
+			</paper-drawer-panel>
+		</template>
+	</dom-module>
+	
+	<script>
+			Polymer({
+				is: "my-Web-App",
+				properties:{
+				},
+				navigate:function(){
+					var ironPages = document.querySelector('iron-pages');
+					ironPages.select(this.pageSelected);
+				}
+			});
+	</script>
+	
+</html>
