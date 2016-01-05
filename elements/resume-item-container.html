@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="import" href="../bower_components/polymer/polymer.html">
+	</head>
+	
+	<dom-module id="resume-item-container">
+		
+		<!--Start Styling for resume-item element-->
+			<style>
+				.itemContainer{
+					@apply(--layout-horizontal);
+					@apply(--layout-wrap);
+				}
+				resume-item{
+					margin:2px;
+				}
+			</style>
+			<!--End Styling for resume-item element-->
+			
+		<template>
+		
+			<!--Start Element template-->
+			<div class="itemContainer">
+				<template is="dom-repeat" items="[[resumeData]]">
+					
+					<resume-item on-tile-click="tileClick" 
+							open-Card="{{index}}" 
+							job="[[item.job]]" 
+							color="[[item.color]]">
+					</resume-item>
+					
+				</template>
+			</div>
+			<!--End Element template-->
+			
+		</template>
+</dom-module>
+
+<script>
+	Polymer({
+		is:"resume-item-container",
+		
+		behaviors:[
+			Polymer.NeonSharedElementAnimatableBehavior
+		],
+		
+		properties:{
+		
+			resumeData:{
+				type:Array,
+				value: function(){
+					return [
+						{job: 'Job 1', color:'#FFB59A'},
+						{job: 'Job 2', color:'#FF8558'},
+						{job: 'Job 3', color:'#FFB59A'},
+						{job: 'Job 4', color:'#FF8558'},
+						{job: 'Job 5', color:'#FF5719'},
+					]
+				}
+			},
+			
+			animationConfig:{
+				value:function(){
+					return{
+						'exit':[{
+							name:'hero-animation',
+							id:'hero',
+							fromPage:this
+						},
+						{
+							name:'ripple-animation',
+							id:'ripple',
+							fromPage:this
+						},
+						{
+							name:'fade-out-animation',
+							node:this.$.itemContainer
+						}]
+					}
+				}
+			}
+		},
+		
+		tileClick: function(event){
+			this.sharedElements = {
+				'hero':event.detail.tileClicked,
+				'ripple':event.detail.tileClicked
+			}
+		}
+		
+	
+	});
+</script>
+	
+</html>

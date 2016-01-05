@@ -15,11 +15,48 @@
 			}
 			.mainToolbar{
 				--paper-toolbar-background: #0367F0;
-				--paper-toolbar-sm-height: 100px;
+				--paper-toolbar-sm-height: 150px;
 			}
 			.menuToolbar{
 				--paper-toolbar-background:#0367F0;
-				--paper-toolbar-sm-height: 100px;
+				--paper-toolbar-sm-height: 150px;
+			}
+			.menu{
+				--paper-menu-selected-item:{
+					background: #cacaca;
+				}
+			}
+			#menuDrawer{
+			}
+			#madeWithPolymer{
+				bottom:0;
+				width:100%;
+				height:10%;
+				text-align:center;
+			}
+			#madeWithPolymer iron-image{
+				width: 100%;
+				height: 100%;
+			}
+			#madeWithPolymer p{
+				font-family: 'Raleway', sans-serif;
+				font-weight: 300;
+				font-size: 1em;
+			}
+			.content{
+				position:relative;
+				width:100%;
+				height:100%;
+				background-image: url("../img/congruent_pentagon.png");
+				
+			}
+			
+			/*If screen is more than 750px lets change the look*/
+			@media only screen and (min-width: 750px){
+				.content{
+					border-left: 5px solid black;
+					border-top: 5px solid black;
+				}
 			}
 		</style>
 		
@@ -27,7 +64,7 @@
 			<paper-drawer-panel>
 				
 				<!--Drawer for navigation-->
-				<paper-header-panel drawer>
+				<paper-header-panel id="menuDrawer"  drawer>
 					
 					<!--Header for toolbar-->
 					<paper-toolbar class="menuToolbar">
@@ -35,7 +72,7 @@
 					</paper-toolbar>
 					
 					<!--Menu-->
-					<paper-menu on-click="navigate" attr-for-selected="page" selected="{{pageSelected}}">
+					<paper-menu class="menu" on-click="navigate" attr-for-selected="page" selected="{{pageSelected}}">
 						
 						<paper-item page="about">
 							<paper-icon-button icon="social:person"></paper-icon-button>
@@ -51,13 +88,17 @@
 							<paper-icon-button icon="icons:assignment"></paper-icon-button>
 							<p>Resume</p>
 						</paper-item>
-					
+						
 					</paper-menu>
-					
+					<div id="madeWithPolymer">
+						<iron-image  sizing='contain' src="../img/madeWithPolymer.png"></iron-image>
+						<p>Made with Polymer</p>
+					</div>
 				</paper-header-panel>
 				
+				
 				<!--Main body-->
-				<paper-header-panel main>
+				<paper-header-panel class="flex" main>
 					<paper-toolbar class="mainToolbar">
 						<paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
 						<div class="header">Tim Nortman</div>
@@ -65,7 +106,7 @@
 					
 					<!--Main Content-->
 					<div class="content">
-						<iron-pages id="ironPageMainContent" attr-for-selected="data-route" selected="about">
+						<iron-pages id="ironPageMainContent" attr-for-selected="data-route" selected="resume">
 							<section data-route="about">
 								<about-content></about-content>
 							</section>
@@ -88,6 +129,11 @@
 			Polymer({
 				is: "my-Web-App",
 				properties:{
+					//the intial landing page
+					pageSelected:{
+						type:String,
+						value:"resume"
+					}
 				},
 				navigate:function(){
 					var ironPages = document.querySelector('iron-pages');

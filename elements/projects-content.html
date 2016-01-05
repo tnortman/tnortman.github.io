@@ -6,9 +6,22 @@
 	</head>
 	
 	<dom-module id="projects-content">
+		<style>
+			.header{
+					font-family: 'Raleway', sans-serif;
+					font-weight: 300;
+					font-size: 3em;
+					margin-left: 2%;
+				}
+				.projectContainer{
+					@apply(--layout-vertical)
+					width:100%;
+				}
+		</style>
+		
 		<template>
-			<paper-material elevation="1">
-				<p>Project Stuff</p>
+			<paper-material class="projectContainer" elevation="1">
+				<p class="header">Project Stuff</p>
 			</paper-material>
 		</template>
 	</dom-module>
