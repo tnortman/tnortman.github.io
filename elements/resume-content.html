@@ -3,18 +3,109 @@
 
 	<head>
 		<link rel="import" href="../bower_components/polymer/polymer.html">
+		<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+		<link rel="import" href="../bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+		<!--JQuery-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	</head>
 	
 	<dom-module id="resume-content">
+		<style is="custom-style">
+			:host{
+				display:block;
+			}
+			.header{
+				font-family: 'Raleway', sans-serif;
+				font-weight: 300;
+				font-size: 3em;
+				margin-left: 2%;
+			}
+			neon-animated-pages {
+				height:100%;
+			}
+			.rippleContainer{
+				position:relative;
+				overflow:hidden;
+				height: 100%;
+				width:100%;
+			}
+			
+			
+			.resumeContainer{
+				@apply(--layout-vertical);
+				position:absolute;
+				width:100%;
+				height:100%;
+				
+			}
+			
+			
+		</style>
+		
 		<template>
-			<paper-material elevation="1">
-				<p>Resume stuff</p>
-			</paper-material>
+				<paper-material class="resumeContainer" elevation="2">
+					<p class="header">Resume stuff</p>
+					<div class="rippleContainer">
+						<neon-animated-pages id="pages"  selected="[[selectedNeonPage]]">
+							
+							<resume-item-container class="test"on-tile-click="tileClick">
+							</resume-item-container >
+							
+							<template is="dom-repeat" items="[[detailData]]">
+								<resume-detail-item descr="{{item.descr}}" on-back-click="backClick" 
+									color-Fixed="{{item.colorFixed}}"
+									color-Card="{{item.colorCard}}">
+								</resume-detail-item>
+							</template>
+						
+						</neon-animated-pages>
+					</div>
+				</paper-material>
 		</template>
+	
 	</dom-module>
+	
 	<script>
+		
+		
+		
+		
 		Polymer({
-			is:"resume-content"
+			is:"resume-content",
+			
+			properties:{
+				selectedNeonPage:{
+					type:'String',
+					value: "0"
+				},
+				detailData:{
+					type:Array,
+					value:function(){
+						return[
+							{descr: 'Job 1', colorFixed:'#FFB59A', colorCard:'#CC8267'},
+							{descr: 'Job 2', colorFixed:'#FF8558', colorCard:'#FFB88B'},
+							{descr: 'Job 3', colorFixed:'#FFB59A', colorCard:'#FFE8CD'},
+							{descr: 'Job 4', colorFixed:'#FF8558', colorCard:'#CC5225'},
+							{descr: 'Job 5', colorFixed:'#FF5719', colorCard:'#CC2400'},
+						]
+				}
+			},
+			},
+			
+			tileClick:function(event){
+				this.selectedNeonPage = event.detail.openCard;
+			},
+			
+			backClick:function(event){
+				this.selectedNeonPage = 0;
+			}
+			
+			
+			
 		});
+		
+		
+		
 	</script>
+	
 </html>

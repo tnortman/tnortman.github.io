@@ -23,15 +23,19 @@
 				box-shadow: 0 0 8px rgba(0,0,0,.8);
 				-webkit-box-shadow: 0 0 8px rgba(0,0,0,.8);
 				-moz-box-shadow: 0 0 8px rgba(0,0,0,.8);
+				
+				/* Positioning picture on face */
 				background-position:-30px -25px;
+				
 				margin: 10px;
 				@apply(--layout-end-justified);
 			}
 			.aboutContainer{
 				@apply(--layout-horizontal);
 				@apply(--layout-wrap);
-				background:#FFB59A;
-				border: 2px solid;
+				@apply(--layout-flex-auto);
+				/*background:#FFB59A;*/
+				/*border: 2px solid;*/
 			}
 			.flexchild{
 				@apply(--layout-flex);
@@ -39,12 +43,21 @@
 			.paper-material{
 				background:#0367F0;
 			}
+			
+			/*If screen is less than 600px lets change the look*/
+			@media only screen and (max-width: 750px){
+				.myPicImage{
+					width:250px;
+					height:250px;
+					/* Positioning picture on face */
+					background-position:-80px -65px;
+				}
+			}
 		</style>
 		<template>
 				<paper-material class="aboutContainer" elevation="1">
 					<p class="header flexchild">About Me</p>
 					<div class="myPicImage"></div>
-					
 				</paper-material>
 		</template>
 	</dom-module>

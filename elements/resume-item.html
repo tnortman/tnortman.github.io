@@ -1,0 +1,46 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+	
+<dom-module id="resume-item">
+	
+	
+	<template>
+		<!--Start Styling for resume-item element-->
+		<style>
+			
+			paper-material{
+				width: 150px;
+				height: 150px;
+				cursor:pointer;
+				font-family: 'Raleway', sans-serif;
+				font-weight: 300;
+			}
+		</style>
+		<!--End Styling for resume-item element-->
+		
+		<!--Start Element template-->
+		<paper-material on-click="tileClick"  openCard$="{{openCard}}" style$="background:{{color}}">
+			<p>[[job]]</p>
+		</paper-material>
+		<!--End Element template-->
+		
+	</template>
+	
+	<script>
+		Polymer({
+			is:"resume-item",
+
+			properties:{
+				
+			},
+			tileClick:function(event){
+				var target = event.target;
+				var openCard = (parseInt(target.getAttribute("openCard"))+1).toString();
+				
+				this.fire('tile-click', {
+					tileClicked: target,
+					openCard: openCard
+				});
+			}
+		});
+	</script>
+</dom-module>
