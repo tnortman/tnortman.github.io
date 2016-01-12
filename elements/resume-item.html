@@ -1,3 +1,4 @@
+
 <link rel="import" href="../bower_components/polymer/polymer.html">
 	
 <dom-module id="resume-item">
@@ -14,12 +15,23 @@
 				font-family: 'Raleway', sans-serif;
 				font-weight: 300;
 			}
+			paper-material:hover{
+				@apply(--shadow-elevation-6dp);
+			}
+            .jobName{
+                text-align:center;
+            }
 		</style>
 		<!--End Styling for resume-item element-->
 		
 		<!--Start Element template-->
-		<paper-material on-click="tileClick"  openCard$="{{openCard}}" style$="background:{{color}}">
-			<p>[[job]]</p>
+		<paper-material 
+			on-click="tileClick"  
+			openCard$="{{openCard}}" 
+			style$="background:{{color}}">
+				
+				<p class="jobName">[[job]]</p>
+		
 		</paper-material>
 		<!--End Element template-->
 		

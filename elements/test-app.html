@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+    </head>
+
+    <dom-module id="test-app">
+
+        
+            <style>
+                .header {
+                    font-family: 'Raleway', sans-serif;
+                    font-weight: 700;
+                    font-size: 3em;
+                }
+                .mainToolbar {
+                    --paper-toolbar-background: #0367F0;
+                    --paper-toolbar-sm-height: 150px;
+                }
+
+                .menuToolbar {
+                    --paper-toolbar-background:#0367F0;
+                    --paper-toolbar-sm-height: 150px;
+                }
+
+                .menu {
+                    --paper-menu-selected-item:{
+                        background: #cacaca;
+                    }
+                }
+                #madeWithPolymer {
+                    bottom: 0;
+                    width: 100%;
+                    height: 10%;
+                    text-align: center;
+                }
+
+                    #madeWithPolymer iron-image {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    #madeWithPolymer p {
+                        font-family: 'Raleway', sans-serif;
+                        font-weight: 300;
+                        font-size: 1em;
+                    }
+
+                
+                #mainContent {
+                    border: 1px solid black;
+                    background:black;
+                }
+                #paperHeaderPanel {
+                    background-color: #0094ff;
+                }
+                /*If screen is more than 750px lets change the look*/
+                @media only screen and (min-width: 750px) {
+                    #content {
+                        border-left: 5px solid black;
+                        border-top: 5px solid black;
+                    }
+
+                    .menu paper-item:hover {
+                        background: #F3F8FE;
+                    }
+                }
+            </style>
+        <template>
+            <paper-drawer-panel>
+
+                <!--Drawer for navigation-->
+                <paper-header-panel id="menuDrawer" drawer>
+
+                    <!--Header for toolbar-->
+                    <paper-toolbar class="menuToolbar">
+                        <div id="menuHeader" class="header">Menu</div>
+                    </paper-toolbar>
+
+                    <!--Menu-->
+                    <paper-menu class="menu" on-click="navigate" attr-for-selected="page" selected="{{pageSelected}}">
+
+                        <paper-item page="p1">
+                            <p>Page 1</p>
+                        </paper-item>
+
+                        <paper-item page="p2">
+
+                            <p>Page 2</p>
+                        </paper-item>
+
+                        <paper-item page="p3">
+
+                            <p>Page 3</p>
+                        </paper-item>
+
+                    </paper-menu>
+                    <div id="madeWithPolymer">
+                        <iron-image sizing='contain' src="../img/madeWithPolymer.png"></iron-image>
+                        <p>Made with Polymer</p>
+                    </div>
+
+                </paper-header-panel>
+
+
+                <!--Main body-->
+                <paper-header-panel main id="paperHeaderPanel">
+                    <paper-toolbar class="mainToolbar">
+
+                        <div class="header">Tim Nortman</div>
+                    </paper-toolbar>
+
+                    <!--Main Content-->
+                    <div id="content">
+                        <iron-pages id="ironPageMainContent" attr-for-selected="data-route" selected="{{pageSelected}}">
+                            <section class="content" data-route="p1">
+                                <test-iron-page></test-iron-page>
+                            </section>
+                            <section data-route="p2">
+                                <p>I am p2</p>
+                            </section>
+                            <section data-route="p3">
+                                <p>I am p3</p>
+                            </section>
+                        </iron-pages>
+                    </div>
+
+                </paper-header-panel>
+
+            </paper-drawer-panel>
+
+
+
+        </template>
+    </dom-module>
+
+    <script>
+        Polymer({
+            is: 'test-app',
+            properties: {
+                pageSelected: {
+                    type: 'String',
+                    value: "p1"
+                }
+            },
+
+            switchPages: function (event) {
+                if (this.openNeonPage == "0")
+                    this.openNeonPage = "1";
+                else
+                    this.openNeonPage = "0";
+            }
+
+        });
+    </script>
+</html>

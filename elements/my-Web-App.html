@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
 
-	<head>
-		<link rel="import" href="../bower_components/polymer/polymer.html">
-		
-	</head>
-	
+	<link rel="import" href="../bower_components/polymer/polymer.html">
 	<dom-module id="my-Web-App">
 		<style>
 			.header{
@@ -26,8 +20,6 @@
 					background: #cacaca;
 				}
 			}
-			#menuDrawer{
-			}
 			#madeWithPolymer{
 				bottom:0;
 				width:100%;
@@ -43,19 +35,21 @@
 				font-weight: 300;
 				font-size: 1em;
 			}
-			.content{
-				position:relative;
-				width:100%;
-				height:100%;
-				background-image: url("../img/congruent_pentagon.png");
-				
-			}
-			
-			/*If screen is more than 750px lets change the look*/
-			@media only screen and (min-width: 750px){
-				.content{
+
+            #paperHeaderPanel {
+                background-image: url("../img/congruent_pentagon.png");
+            }
+            #content{
+                height:100%;
+            }
+            /*If screen is more than 750px lets change the look*/
+            @media only screen and (min-width: 750px) {
+                #content;{
 					border-left: 5px solid black;
 					border-top: 5px solid black;
+				}
+				.menu paper-item:hover{
+						background:#F3F8FE;
 				}
 			}
 		</style>
@@ -98,15 +92,15 @@
 				
 				
 				<!--Main body-->
-				<paper-header-panel class="flex" main>
+				<paper-header-panel main id="paperHeaderPanel">
 					<paper-toolbar class="mainToolbar">
 						<paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
 						<div class="header">Tim Nortman</div>
 					</paper-toolbar>
 					
 					<!--Main Content-->
-					<div class="content">
-						<iron-pages id="ironPageMainContent" attr-for-selected="data-route" selected="resume">
+					<div id="content" >
+						<iron-pages id="ironPageMainContent" attr-for-selected="data-route" selected="{{pageSelected}}">
 							<section data-route="about">
 								<about-content></about-content>
 							</section>
@@ -123,23 +117,21 @@
 			
 			</paper-drawer-panel>
 		</template>
+        <script>
+            Polymer({
+                is: "my-Web-App",
+                properties: {
+                    //the intial landing page
+                    pageSelected: {
+                        type: String,
+                        value: "resume"
+                    }
+                },
+                navigate: function () {
+                    this.pageSelected = event.target.getAttribute("page");
+                }
+            });
+        </script>
 	</dom-module>
 	
-	<script>
-			Polymer({
-				is: "my-Web-App",
-				properties:{
-					//the intial landing page
-					pageSelected:{
-						type:String,
-						value:"resume"
-					}
-				},
-				navigate:function(){
-					var ironPages = document.querySelector('iron-pages');
-					ironPages.select(this.pageSelected);
-				}
-			});
-	</script>
 	
-</html>

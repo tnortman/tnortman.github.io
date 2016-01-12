@@ -1,0 +1,46 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="raw-tile">
+
+	<template>
+		<style>
+
+            paper-material {
+                width: 150px;
+                height: 150px;
+                cursor: pointer;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 300;
+            }
+
+                paper-material:hover {
+                    @apply(--shadow-elevation-6dp);
+                }
+		</style>
+	
+		<paper-material id="tile" openCard$="{{openCard}}" on-click="_onClick" style$="background:{{color}};">
+				<p>[[contents]]</p>
+				<p>[[openCard]]</p>
+		</paper-material>
+	
+	</template>
+	
+	
+</dom-module>
+
+<script>
+	Polymer({
+		is: 'raw-tile',
+		 
+		_onClick:function(event){
+			var target = event.target;
+			
+			var openCard = (parseInt(target.getAttribute("openCard")) + 1).toString();
+			this.fire('tile-click', {
+				tileClicked: target,
+				openCard: openCard
+			});
+		}
+		
+	});
+</script>
