@@ -1,112 +1,135 @@
-<!DOCTYPE html>
-<html>
 
-	<head>
-		<link rel="import" href="../bower_components/polymer/polymer.html">
-	</head>
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
 	
-	<dom-module id="resume-detail-item">
-		
-		<!--Start Styling for resume-item element-->
-		<style>
-			#fixed {
-			  position: relative;
-			  top: 0;
-			  left: 0;
-			  width: 100%;
-			  height:100%;
-			}
-			#card {
-			  position: absolute;
-			  top:0;
-			  left:0;
-			  margin: 5%;
-			  width: 90%;
-			  height: 90%; 
-			  background: rgba(255,255,255,0.5);
-			}
-			#back{
-				position:absolute;
-				border-bottom-right-radius:15px;
-				background:rgba(255,255,255,0.5);
-			}
-			#back:hover{
-				background:rgba(255,255,255,0.6);
-			}
-		</style>
-		<!--End Styling for resume-item element-->
-			
-		<!--Start Element template-->
-		<template>
-				<paper-material  
-					id="fixed" 
-					style$="background:[[colorFixed]];"
-					elevation="1"
-				>
-					<paper-icon-button id="back" icon="icons:arrow-back" on-click="backClick"></paper-icon-button>
-				
-				</paper-material>
-				
-				<paper-material 
-					id="card" 
-					elevation="2">
-					<p>Some filler Content of {{descr}}</p>
-				</paper-material>
-		</template>
-		<!--End Element template-->
-	</dom-module>
 	
-	<script>
-		Polymer({
-			is:"resume-detail-item",
-			
-			behaviors:[Polymer.NeonSharedElementAnimatableBehavior],
-			
-			properties:{
-				animationConfig:{
-					value:function(){
-						return{
-							'entry':[
+<dom-module id="resume-detail-item">
+    <!--Start Element template-->
+    <template>
+        <!--Start Styling for resume-item element-->
+        <style>
+           
+            #fixed {
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            #card {
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin: 5%;
+                width: 90%;
+                height: 90%;
+                background: rgba(255,255,255,0.5);
+            }
+
+            #back {
+                position: absolute;
+                border-bottom-right-radius: 15px;
+                background: rgba(255,255,255,0.5);
+            }
+
+            #back:hover {
+                background: rgba(255,255,255,0.6);
+            }
+
+            #logo {
+                --iron-image-width:20%;
+            }
+            .header{
+                font-weight:700;
+                font-size:2em;
+            }
+            #imgCont{
+
+
+            }
+          
+        </style>
+        <!--End Styling for resume-item element-->
+
+        
+        
+        <paper-material id="fixed"
+                        style$="background:[[colorFixed]];"
+                        elevation="1">
+
+            <paper-icon-button id="back" icon="icons:arrow-back" on-click="backClick"></paper-icon-button>
+
+        </paper-material>
+
+        <paper-material id="card"
+                        elevation="2">
+            <div class="horizontal layout">
+                <h1 class="header flex">{{jobName}}</h1>
+                <div id="logoCont"><iron-image id="logo"  src$="[[logo]]"></iron-image></div>
+                
+            </div>
+            
+            <p class="descr">{{descr}}</p>
+            
+        </paper-material>
+    </template>
+	<!--End Element template-->
+
+    <script>
+        Polymer({
+            is: "resume-detail-item",
+
+            behaviors: [Polymer.NeonSharedElementAnimatableBehavior],
+
+            properties: {
+                animationConfig: {
+                    value: function () {
+                        return {
+                            'entry': [
 							{
-								name:'hero-animation',
-								id:'hero',
-								toPage:this,
-								timing:{
-									delay:150
-								}
+							    name: 'hero-animation',
+							    id: 'hero',
+							    toPage: this,
+							    timing: {
+							        delay: 150
+							    }
 							},
 							{
-								name:'ripple-animation',
-								id:'ripple',
-								toPage:this
+							    name: 'ripple-animation',
+							    id: 'ripple',
+							    toPage: this
 							}],
-							'exit': [{
-								name: 'fade-out-animation',
-								node: this.$.fixed
-							}, {
-								 name: 'transform-animation',
-								 transformFrom: 'none',
-								 transformTo: 'translate(0px,-200vh) scale(0.9,1)',
-								 node: this.$.card
-							}]
-						}
-					}
-				},
-				sharedElements:{
-					value:function(){
-						return{
-							'hero':this.$.card,
-							'ripple':this.$.fixed
-						}
-					}
-				}
-			},
-			
-			backClick:function(event){
-				this.fire('back-click');
-			}
-			
-		});
-			
-	</script>
-</html>
+                            'exit': [{
+                                name: 'fade-out-animation',
+                                node: this.$.fixed
+                            }, {
+                                name: 'transform-animation',
+                                transformFrom: 'none',
+                                transformTo: 'translate(0px,-200vh) scale(0.9,1)',
+                                node: this.$.card
+                            }]
+                        }
+                    }
+                },
+                sharedElements: {
+                    value: function () {
+                        return {
+                            'hero': this.$.card,
+                            'ripple': this.$.fixed
+                        }
+                    }
+                }
+            },
+
+            backClick: function (event) {
+                this.fire('back-click');
+            }
+
+        });
+
+    </script>
+
+</dom-module>
+	
+	
