@@ -7,14 +7,14 @@
 	<template>
 		<!--Start Styling for resume-item element-->
 		<style>
-			
-			paper-material{
-				width: 150px;
-				height: 150px;
-				cursor:pointer;
-				font-family: 'Raleway', sans-serif;
-				font-weight: 300;
-			}
+
+            #paper-container{
+                width: 150px;
+                height: 150px;
+                cursor: pointer;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 300;
+            }
 			paper-material:hover{
 				@apply(--shadow-elevation-6dp);
 			}
@@ -25,7 +25,8 @@
 		<!--End Styling for resume-item element-->
 		
 		<!--Start Element template-->
-		<paper-material 
+		<paper-material
+            id="paper-container"
 			on-click="tileClick"  
 			openCard$="{{openCard}}" 
 			style$="background:{{color}}">
@@ -45,9 +46,17 @@
 				
 			},
 			tileClick:function(event){
-				var target = event.target;
+                //Sets target to what was clicked on (within paper-material element)
+			    var target = event.target;
+			    
+                //Sets to parent, paper-material, if not itself
+			    while ((target.id).localeCompare("paper-container") != 0)
+			        target = target.parentNode;
+
+                //Opens the resumeDetailItem Card associated with it (if 4rth tile, opens 5th neon page)
 				var openCard = (parseInt(target.getAttribute("openCard"))+1).toString();
 				
+
 				this.fire('tile-click', {
 					tileClicked: target,
 					openCard: openCard

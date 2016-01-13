@@ -80,7 +80,10 @@
 							<paper-icon-button icon="icons:assignment"></paper-icon-button>
 							<p>Resume</p>
 						</paper-item>
-						
+                        <paper-item page="contact">
+                            <paper-icon-button icon="communication:email"></paper-icon-button>
+                            <p>Contact</p>
+                        </paper-item>
 					</paper-menu>
 					<div id="madeWithPolymer">
 						<iron-image sizing='contain' src="../img/madeWithPolymer.png"></iron-image>
@@ -108,6 +111,9 @@
 							<section data-route="resume">
 								<resume-content></resume-content>
 							</section>
+                            <section data-route="contact">
+                                <contact-content></contact-content>
+                            </section>
 						</iron-pages>
 					</div>
 				

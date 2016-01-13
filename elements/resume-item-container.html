@@ -21,11 +21,11 @@
 		</style>
 		<!--End Styling for resume-item element-->
 			
-	
-		
 		<!--Start Element template-->
+        
         <!--Import the data for the detail pages from a JSON file-->
         <iron-ajax auto url="../data/resumeItemData.json" handle-as="json" last-response="{{resumeItemData}}"></iron-ajax>
+        
         <div class="itemContainer">
             <template is="dom-repeat" items="[[resumeItemData.items]]">
 
