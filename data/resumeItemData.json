@@ -1,7 +1,24 @@
-{"items":[
-	{ "job": "Ameriprise Auto & Home", "color": "#FFB59A" },
-	{ "job": "GreenLifeXpo Webmaster", "color": "#FF8558" },
-	{ "job": "Job 3", "color": "#FFB59A" },
-	{ "job": "Job 4", "color": "#FF8558" },
-	{ "job": "Job 5", "color": "#FF5719" }
-]}
+{
+   "items":[
+      {
+         "job":"Ameriprise Auto & Home",
+         "color":"#FFB59A"
+      },
+      {
+         "job":"GreenLifeXpo Webmaster",
+         "color":"#FF8558"
+      },
+      {
+         "job":"Job 3",
+         "color":"#FFB59A"
+      },
+      {
+         "job":"Job 4",
+         "color":"#FF8558"
+      },
+      {
+         "job":"Job 5",
+         "color":"#FF5719"
+      }
+   ]
+}
