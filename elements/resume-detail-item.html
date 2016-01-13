@@ -22,9 +22,8 @@
 
             #card {
                 position: absolute;
-                top: 0;
-                left: 0;
-                margin-left:5%;
+                top: 5%;
+                left: 5%;
                 
                 width: 90%;
                 height: 90%;
@@ -32,7 +31,7 @@
             }
 
             #back {
-                position: absolute;
+                
                 border-bottom-right-radius: 15px;
                 background: rgba(255,255,255,0.5);
                 
@@ -43,22 +42,27 @@
             }
 
             #logo {
-                --iron-image-width:20%;
+                width:100%;
+                position:relative;
+                right:2%;
+            }
+            .mainHeader {
+                font-weight: 700;
+                font-size: 2em;
             }
             .header{
-                font-weight:700;
                 font-size:2em;
             }
-            #imgCont{
-
-
+            .bold{
+                font-weight:700;
             }
+            
           
         </style>
         <!--End Styling for resume-item element-->
 
         
-        
+        <!--Paper Background-->
         <paper-material id="fixed"
                         style$="background:[[colorFixed]];"
                         elevation="1">
@@ -66,18 +70,69 @@
             <paper-icon-button id="back" icon="icons:arrow-back" on-click="backClick"></paper-icon-button>
 
         </paper-material>
+        <!--End Paper Background-->
 
-        <paper-material id="card" elevation="2">
-            
-            <div class="horizontal layout">
-                <div class="flex-3"><h1 class="header">{{jobName}}</h1></div>
-                <div class="flex" style="text-align:right;"><iron-image id="logo" src$="[[logo]]"></iron-image></div>
+        <!--Paper Foreground-->
+        <div style="height:100%; width:100%;">
+            <paper-material id="card" elevation="2">
                 
-            </div>
+                <!--Job Title And Logo-->
+                <div class="horizontal layout center">
+                    <div class="flex-3">
+                        <h1 class="mainHeader">{{jobName}}</h1>
+                    </div>
+                    <div class="flex" >
+                        <a target="_blank" href="[[logoLink]]">
+                            <img id="logo" src$="[[logo]]"></img>
+                        </a>
+                    </div>
+                </div>
+                <!--End Job Title And Logo-->
+
+                <!--Position, Time, and Location-->
+                <div class="horizontal layout">
+                    <div class="flex" style="word-wrap: break-word;">
+                        <p>
+                            <span class="bold">Position:</span>
+                            {{position}}
+                        </p>
+                        <p>
+                            <span class="bold">Duration:</span>
+                            {{duration}}
+                        </p>
+                        <p>
+                            <span class="bold">Location:</span>
+                            {{location}}
+                        </p>
+
+                    </div>
+                </div>
+                <!--End Position, Time, and Location-->
+                
+                <!--Overall Description-->
+                <div>
+                   
+                </div>
+                <!--End Overall Description-->
+
+                <!--Main Experince Points-->
+                <div>
+
+                </div>
+                <!--End Main Experince Points-->
+
+                <!--Skills Used on the Job-->
+                <div>
+
+                </div>
+                <!--End Skills Used on the Job-->
+
+                
             
-            <p class="descr">{{descr}}</p>
-            
-        </paper-material>
+            </paper-material>
+        </div>
+        <!--End Paper Foreground-->
+
     </template>
 	<!--End Element template-->
 

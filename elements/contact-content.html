@@ -1,0 +1,42 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="contact-content">
+    <template>
+        <style>
+            .mainHeader {
+                font-size: 3em;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            .contactContainer {
+                @apply(--layout-vertical);
+                width:100%;
+            }
+
+            
+        </style>
+
+        <paper-material class="contactContainer" elevation="2">
+
+            <div class="flex">
+                <p class="mainHeader">Contact Me</p>
+            </div>
+            <div class="flex-3">
+                <p>Im alot of content</p>
+                <p>Im alot of content</p>
+                <p>Im alot of content</p>
+                <p>Im alot of content</p>
+            </div>
+            
+        </paper-material>
+        
+    </template>
+    <script>
+        Polymer({
+            is: "contact-content"
+        });
+    </script>
+</dom-module>
+	
+	

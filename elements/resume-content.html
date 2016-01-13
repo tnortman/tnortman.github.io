@@ -6,7 +6,6 @@
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-
 <dom-module id="resume-content">
      <template>
          <style is="custom-style">
@@ -14,12 +13,8 @@
                 display: block;
                 height:100%;
             }
-
             .mainHeader {
-                font-family: 'Raleway', sans-serif;
-                font-weight: 300;
                 font-size: 3em;
-                margin-left: 2%;
                 margin-top: 10px;
                 margin-bottom: 10px;
             }
@@ -56,26 +51,70 @@
                  border-color: #FFB59A;
                 
              }
-            
+             #downloadIconTag {
+                 visibility: hidden;
+                 opacity: 0;
+                 transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+                 border: 1px black solid;
+                 border-radius: 5px;
+                 margin-left: auto;
+                 margin-top: -5px;
+                 padding:2px;
+             }
+
+             #downloadIcon:hover + paper-material {
+                 visibility: visible;
+                 opacity: 1;
+                 transition-delay: 0s;
+             }
         </style>
 
          <!--Import the data for the detail pages from a JSON file-->
          <iron-ajax auto url="../data/resumeDetailData.json" handle-as="json" last-response="{{resumeDetailData}}"></iron-ajax>
 
         <div id="resCont">
+            <!--Header-->
+            <div class="vertical layout">
+                <div class="horizontal layout">
+                    <h1 class="mainHeader flex">Resume</h1>
+                    <div class="flex vertical layout">
+                        
+                            <paper-icon-button type="submit" id="downloadIcon"
+                                               style="margin-left:auto;"
+                                               icon="icons:file-download"
+                                               on-click="downloadResume">
+                            </paper-icon-button>
+                        
+                        <paper-material elevation="3" id="downloadIconTag">Download Resume</paper-material>
+                    </div>
+                </div>
+            </div> 
+            
+            <hr />
+            
+            <!--Objective-->
+            <div id="objectiveCont" style="position:relative;" class="vertical layout flex" >
+                <p class="header">Objective:</p>
+                <div class="horizontal layout">
+                    <div class="flex">
+                        <p>
+                            Here is my objective.
+                        </p>
+                    </div>
+                    <div style="margin-left:auto;">
+                        <iron-image style="height:100px; width:100px; " sizing="contain" src="../img/objective.png"></iron-image>
+                    </div>            
+                </div>
+            </div>
+
+            <hr />
+
+            <!--Employment-->
             <div>
-                <p class="mainHeader">Resume stuff</p>
-                <hr />
+                <p class="header">Employment:</p>
             </div>
             
-            <div id="objectiveCont" class="vertical layout" >
-                <p class="header">Objective:</p>
-                <p>Here is my objective</p>
-                <hr />
-            </div>
-            <div>
-                <p class="header">Experience:</p>
-            </div>
+            <!--Employment Items-->
             <div id="rippleCont">
                 <neon-animated-pages id="pages" selected="[[selectedNeonPage]]">
 
@@ -85,21 +124,36 @@
                     <template is="dom-repeat" items="{{resumeDetailData.items}}">
                         <resume-detail-item id="test" on-back-click="backClick"
                                             job-name="{{item.jobName}}"
+                                            position="{{item.position}}"
+                                            duration="{{item.duration}}"
+                                            location="{{item.location}}"
                                             descr="{{item.descr}}"
                                             color-fixed="{{item.colorFixed}}"
-                                            logo="{{item.logo}}">
+                                            logo="{{item.logo}}"
+                                            logo-Link="{{item.logoLink}}">
                         </resume-detail-item>
                     </template>
 
                 </neon-animated-pages>
             </div>
-            <div>
-                <hr />
+            
+            <hr />
+            
+            <!--Technical Skills-->
+            <div class="vertical layout">
+                <p class="header">Technical Skills:</p>
             </div>
-            <div>
-                <h1 class="header">Extra Ciricular</h1>
+            
+            <hr />
+            
+            <!--Extra Ciricular-->
+            <div class="vertical layout">
+                <p class="header">Extra Ciricular:</p>
             </div>
         </div>
+
+         <!--Paper Toasts/Notifications-->
+        <paper-toast id="resumeDownloadToast" text="Resume Download started..."></paper-toast>
 </template>
 
     <script>
@@ -133,6 +187,15 @@
                 this.$.pages.style.height = "100%";
 
             },
+            //This function acts as a download button for the resumeDownloadIcon
+            downloadResume: function () {
+                
+                var link = document.createElement("a");
+                link.download = "Resume";
+                link.href = '../uploads/Resume(Test).docx';
+                link.click();
+                this.$.resumeDownloadToast.open();
+            }
            
         });
 

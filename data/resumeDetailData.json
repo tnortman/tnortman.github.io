@@ -2,33 +2,53 @@
    "items":[
       {
          "jobName":"Ameriprise Auto & Home",
+		 "position":"IT Intern",
+		 "duration":"June 2015 - Current",
+		 "location":"Green Bay, WI",
          "descr":"I worked in the IT Department",
          "colorFixed":"#FFB59A",
-         "logo":"../img/testLogo.png"
+         "logo":"../img/ameriprise_logo.png",
+		 "logoLink":"https://www.ameriprise.com/auto-home-insurance/"
       },
       {
          "jobName":"GreenLifeXpo Webmaster",
+		 "position":"",
+		 "duration":"",
+		 "location":"",
          "descr":"GreenLifeXpo Webmaster",
          "colorFixed":"#FF8558",
-         "logo":"../img/testLogo.png"
+         "logo":"../img/testLogo.png",
+		 "logoLink":"https://www.google.com/"
       },
       {
          "jobName":"Job 8",
+		 "position":"",
+		 "duration":"",
+		 "location":"",
          "descr":"Job 3",
          "colorFixed":"#FFB59A",
-         "logo":"../img/testLogo.png"
+         "logo":"../img/testLogo.png",
+		 "logoLink":"https://www.google.com/"
       },
       {
          "jobName":"Job 9",
+		 "position":"",
+		 "duration":"",
+		 "location":"",
          "descr":"Job 4",
          "colorFixed":"#FF8558",
-         "logo":"../img/testLogo.png"
+         "logo":"../img/testLogo.png",
+		 "logoLink":"https://www.google.com/"
       },
       {
          "jobName":"Job 10",
+		 "position":"",
+		 "duration":"",
+		 "location":"",
          "descr":"Job 5",
          "colorFixed":"#FF5719",
-         "logo":"../img/testLogo.png"
+         "logo":"../img/testLogo.png",
+		 "logoLink":"https://www.google.com/"
       }
    ]
 }

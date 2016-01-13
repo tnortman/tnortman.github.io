@@ -14,6 +14,7 @@
     "iron-image": "PolymerElements/iron-image#~1.0.4",
     "iron-flex-layout": "PolymerElements/iron-flex-layout#~1.2.2",
     "neon-animation": "PolymerElements/neon-animation#~1.0.8",
-    "iron-ajax": "PolymerElements/iron-ajax#~1.1.1"
+    "iron-ajax": "PolymerElements/iron-ajax#~1.1.1",
+    "paper-toast": "PolymerElements/paper-toast#~1.1.1"
   }
 }
