@@ -1,7 +1,34 @@
-{"items":[
-	{"jobName": "Ameriprise Auto & Home", "descr": "I worked in the IT Department", "colorFixed": "#FFB59A", "logo": "../img/testLogo.png"},
-	{"jobName": "GreenLifeXpo Webmaster", "descr": "GreenLifeXpo Webmaster", "colorFixed": "#FF8558", "logo": "../img/testLogo.png"},
-	{"jobName": "Job 8", "descr": "Job 3", "colorFixed": "#FFB59A", "logo": "../img/testLogo.png"},
-	{"jobName": "Job 9", "descr": "Job 4", "colorFixed": "#FF8558", "logo": "../img/testLogo.png"},
-	{"jobName": "Job 10", "descr": "Job 5", "colorFixed": "#FF5719", "logo": "../img/testLogo.png"}
-]}
+{
+   "items":[
+      {
+         "jobName":"Ameriprise Auto & Home",
+         "descr":"I worked in the IT Department",
+         "colorFixed":"#FFB59A",
+         "logo":"../img/testLogo.png"
+      },
+      {
+         "jobName":"GreenLifeXpo Webmaster",
+         "descr":"GreenLifeXpo Webmaster",
+         "colorFixed":"#FF8558",
+         "logo":"../img/testLogo.png"
+      },
+      {
+         "jobName":"Job 8",
+         "descr":"Job 3",
+         "colorFixed":"#FFB59A",
+         "logo":"../img/testLogo.png"
+      },
+      {
+         "jobName":"Job 9",
+         "descr":"Job 4",
+         "colorFixed":"#FF8558",
+         "logo":"../img/testLogo.png"
+      },
+      {
+         "jobName":"Job 10",
+         "descr":"Job 5",
+         "colorFixed":"#FF5719",
+         "logo":"../img/testLogo.png"
+      }
+   ]
+}
