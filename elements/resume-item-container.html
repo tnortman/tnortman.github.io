@@ -24,15 +24,16 @@
 		<!--Start Element template-->
         
         <!--Import the data for the detail pages from a JSON file-->
-        <iron-ajax auto url="../data/resumeItemData.json" handle-as="json" last-response="{{resumeItemData}}"></iron-ajax>
+        <iron-ajax auto url="../data/resumeData.json" handle-as="json" last-response="{{resumeData}}"></iron-ajax>
         
         <div class="itemContainer">
-            <template is="dom-repeat" items="[[resumeItemData.items]]">
+            <template is="dom-repeat" items="[[resumeData.items]]">
 
                 <resume-item on-tile-click="tileClick"
                              open-card="{{index}}"
-                             job="[[item.job]]"
-                             color="[[item.color]]">
+                             job="[[item.jobName]]"
+                             color="[[item.color]]"
+                             logo="[[item.logo]]">
                 </resume-item>
 
             </template>

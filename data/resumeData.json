@@ -20,7 +20,7 @@
 				"content":"Yet another test item that is here to take up space. My fingers are getting tired."
 			}
 		 ],
-         "colorFixed":"#FFB59A",
+         "color":"#FFB59A",
          "logo":"../img/ameriprise_logo.png",
 		 "logoLink":"https://www.ameriprise.com/auto-home-insurance/"
       },
@@ -44,7 +44,7 @@
 				"content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec nulla non sem laoreet feugiat et quis enim. Aliquam in est tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla imperdiet sit amet nulla."
 			}
 		 ],
-         "colorFixed":"#FF8558",
+         "color":"#FF8558",
          "logo":"../img/glx_logo.png",
 		 "logoLink":"https://www.google.com/"
       },
@@ -68,7 +68,7 @@
 				"content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec nulla non sem laoreet feugiat et quis enim. Aliquam in est tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla imperdiet sit amet nulla."
 			}
 		 ],
-         "colorFixed":"#FFB59A",
+         "color":"#FFB59A",
          "logo":"../img/test_logo.png",
 		 "logoLink":"https://www.google.com/"
       },
@@ -92,7 +92,7 @@
 				"content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec nulla non sem laoreet feugiat et quis enim. Aliquam in est tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla imperdiet sit amet nulla."
 			}
 		 ],
-         "colorFixed":"#FF8558",
+         "color":"#FF8558",
          "logo":"../img/test_logo.png",
 		 "logoLink":"https://www.google.com/"
       },
@@ -116,7 +116,7 @@
 				"content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec nulla non sem laoreet feugiat et quis enim. Aliquam in est tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla imperdiet sit amet nulla."
 			}
 		 ],
-         "colorFixed":"#FF5719",
+         "color":"#FF5719",
          "logo":"../img/test_logo.png",
 		 "logoLink":"https://www.google.com/"
       }

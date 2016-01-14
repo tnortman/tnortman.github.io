@@ -29,16 +29,6 @@
                  overflow: hidden;
              }
 
-            .bigDiv {
-                background: rgb(0, 148, 255);
-                height: 150px;
-            }
-
-            .smallDiv {
-                background: rgb(0, 255, 144);
-                height: 40px;
-            }
-
              #pages {
                  height:100%;
              }
@@ -49,8 +39,8 @@
              hr {
                  width: 100%;
                  border-color: #FFB59A;
-                
              }
+
              #downloadIconTag {
                  visibility: hidden;
                  opacity: 0;
@@ -69,8 +59,8 @@
              }
         </style>
 
-         <!--Import the data for the detail pages from a JSON file-->
-         <iron-ajax auto url="../data/resumeDetailData.json" handle-as="json" last-response="{{resumeDetailData}}"></iron-ajax>
+        <!--Import the data for the detail pages from a JSON file-->
+         <iron-ajax auto url="../data/resumeData.json" handle-as="json" last-response="{{resumeData}}"></iron-ajax>
 
         <div id="resCont">
             <!--Header-->
@@ -90,66 +80,74 @@
                 </div>
             </div> 
             
-            <hr />
+            
             
             <!--Objective-->
-            <div id="objectiveCont" style="position:relative;" class="vertical layout flex" >
-                <p class="header">Objective:</p>
-                <div class="horizontal layout">
-                    <div class="flex">
-                        <p>
-                            Here is my objective.
-                        </p>
+            <collapsible-header header-text="Objective">
+                <div id="objectiveCont" style="position:relative;" class="vertical layout flex">
+                    <div class="horizontal layout">
+                        <div class="flex">
+                            <p>
+                                Here is my objective.
+                            </p>
+                        </div>
+                        <div style="margin-left:auto;">
+                            <iron-image style="height:100px; width:100px; " sizing="contain" src="../img/objective.png"></iron-image>
+                        </div>
                     </div>
-                    <div style="margin-left:auto;">
-                        <iron-image style="height:100px; width:100px; " sizing="contain" src="../img/objective.png"></iron-image>
-                    </div>            
                 </div>
-            </div>
+            </collapsible-header>
+            <!--End Objective-->
 
-            <hr />
+            
 
             <!--Employment-->
-            <div>
-                <p class="header">Employment:</p>
-            </div>
-            
-            <!--Employment Items-->
-            <div id="rippleCont">
-                <neon-animated-pages id="pages" selected="[[selectedNeonPage]]">
+            <collapsible-header header-text="Employment">
+                <!--Employment Items-->
+                <div id="rippleCont">
+                    <neon-animated-pages id="pages" selected="[[selectedNeonPage]]">
 
-                    <resume-item-container on-tile-click="tileClick">
-                    </resume-item-container>
+                        <resume-item-container on-tile-click="tileClick">
+                        </resume-item-container>
 
-                    <template is="dom-repeat" items="{{resumeDetailData.items}}">
-                        <resume-detail-item id="test" on-back-click="backClick"
-                                            job-name="{{item.jobName}}"
-                                            position="{{item.position}}"
-                                            duration="{{item.duration}}"
-                                            location="{{item.location}}"
-                                            descr="{{item.descr}}"
-                                            color-fixed="{{item.colorFixed}}"
-                                            logo="{{item.logo}}"
-                                            logo-Link="{{item.logoLink}}">
-                        </resume-detail-item>
-                    </template>
+                        <template is="dom-repeat" items="{{resumeData.items}}">
+                            <resume-detail-item id="test" on-back-click="backClick"
+                                                job-name="{{item.jobName}}"
+                                                position="{{item.position}}"
+                                                duration="{{item.duration}}"
+                                                location="{{item.location}}"
+                                                descr="{{item.descr}}"
+                                                experience="{{item.experience}}"
+                                                color-fixed="{{item.color}}"
+                                                logo="{{item.logo}}"
+                                                logo-link="{{item.logoLink}}">
+                            </resume-detail-item>
+                        </template>
 
-                </neon-animated-pages>
-            </div>
+                    </neon-animated-pages>
+                </div>
+            </collapsible-header>
+            <!--END (OF) :) Employment-->
             
-            <hr />
             
+
             <!--Technical Skills-->
-            <div class="vertical layout">
-                <p class="header">Technical Skills:</p>
-            </div>
+            <collapsible-header header-text="Technical Skills">
+                <div class="vertical layout">
+                    <p class="content">Some content</p>
+                </div>
+            </collapsible-header>
+            <!--End Technical Skills-->
+
             
-            <hr />
             
             <!--Extra Ciricular-->
-            <div class="vertical layout">
-                <p class="header">Extra Ciricular:</p>
-            </div>
+            <collapsible-header header-text="Extra Ciricular">
+                <div class="vertical layout">
+                    <p class="content">I am some content</p>
+                </div>
+            </collapsible-header>
+            <!--End Extra Ciricular-->
         </div>
 
          <!--Paper Toasts/Notifications-->
@@ -164,12 +162,7 @@
                 selectedNeonPage: {
                     type: Number,
                     value: 0
-                },
-                resumeContHght: {
-                    type: Number,
-                    value: 0
                 }
-                
             },
 
             tileClick: function (event) {
@@ -177,8 +170,8 @@
 
                 this.selectedNeonPage = event.detail.openCard;
 
-                //Set to largest page of resume Detail Item
-                this.$.pages.style.height = "500px";
+                //SET HEIGHT OF LARGEST RESUME PAGE HERE!
+                this.$.pages.style.height = "1000px";
                 //this.$.pages.style.height = this.resumeContHght + "px";
             },
 
@@ -199,11 +192,8 @@
            
         });
 
-
-
     </script>
 
-	
 </dom-module>
 	
 	
