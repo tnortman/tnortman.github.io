@@ -1,76 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="import" href="bower_components/polymer/polymer.html">
-    <link rel="import" href="bower_components/neon-animation/neon-animated-pages.html">
-    <link rel="import" href="bower_components/neon-animation/neon-animations.html">
-	<link rel="import" href="elements/elements.html">
-  </head>
-  <body class="fullbleed">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <!--Google fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+    <!--Imports for Polymer elements-->
+    <link rel="import" href="elements/elements.html">
+    <!--Import for myWebApp-->
+    <link href="elements/my-Web-App.html" rel="import">
 
-    <dom-module id="test-page">
-      <style>
-      
-      </style>
-      <template>
-        <div outer class=" layout vertical">
-          <div><content></content></div>
-          <div class="flex layout vertical center center-justified">hey flexy !</div>
-		  <div class="flex layout vertical center center-justified" style=" background:orange;">Other content</div>
-        </div>
-      </template>
-      <script>
-        Polymer({
-          is: 'test-page',
-
-          behaviors: [
-            Polymer.NeonAnimatableBehavior
-          ],
-
-          properties: {
-            animationConfig: {
-              type: Object,
-              value: function() {
-                return {
-                  'entry': {
-                    name: 'slide-from-right-animation',
-                    node: this
-                  },
-                  'exit': {
-                    name: 'slide-left-animation',
-                    node: this
-                  }
-                }
-              }
-            }
-          }
-        })
-      </script>
-    </dom-module>
-
-    <template is="dom-bind">
-      <div class="layout vertical fit" on-click="_click">
-        <header>HEADER<br>HEADER<br>HEADER<br>HEADER</header>
-        <neon-animated-pages id="pages" selected="0" class="flex">
-          <test-page><resume-item-container></resume-item-container></test-page>
-		  <test-page><resume-detail-item on-back-click="backClick"
-                                         job-name="Hello World"
-                                         descr="Content"
-                                         color-fixed="#619EF3"
-                                         logo="{{item.logo}}">
-                     </resume-detail-item></test-page>
-          <test-page>2<div style="background:blue; height:500px;">P</div><br>2</test-page>
-          <test-page>3<br>3<br>3</test-page>
-        </neon-animated-pages>
-        
-      </div>
-    </template>
-
-    <script>
-      var scope = document.querySelector('template[is="dom-bind"]')
-      scope._click = function(e) {
-        this.$.pages.selectNext()
-      }
-    </script>
-  </body>
+    <style>
+        /*Deafult font*/
+        body {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
+            height:500px;
+        }
+    </style>
+</head>
+<body fullbleed unresolved vertical>
+    
+        <collapsible-header header-text="Techskilz">
+            <p>I am some content</p>
+        </collapsible-header>
+        <collapsible-header header-text="Second">
+            <p>I am some content</p>
+        </collapsible-header>
+   
+</body>
 </html>

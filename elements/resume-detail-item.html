@@ -12,6 +12,18 @@
                 display: block;
                 height: 100%;
             }
+            .mainHeader {
+                font-weight: 700;
+                font-size: 2em;
+                margin-bottom: 0;
+            }
+
+            .header {
+                font-size: 2em;
+            }
+            .bold {
+                font-weight: 700;
+            }
             #fixed {
                 position: relative;
                 top: 0;
@@ -34,7 +46,6 @@
                 
                 border-bottom-right-radius: 15px;
                 background: rgba(255,255,255,0.5);
-                
             }
 
             #back:hover {
@@ -46,15 +57,21 @@
                 position:relative;
                 right:2%;
             }
-            .mainHeader {
-                font-weight: 700;
-                font-size: 2em;
+            
+            
+            #tabs {
+                background-color: #619EF3;
+                --paper-tabs-selection-bar-color: rgba(0,0,0,0.5);
             }
-            .header{
-                font-size:2em;
+
+            .tab {
+                --paper-tab-ink: #9DC2F6;
             }
-            .bold{
-                font-weight:700;
+
+            #position {
+                margin-top: 0;
+                padding-left: 2em;
+                font-style:italic;
             }
             
           
@@ -76,10 +93,14 @@
         <div style="height:100%; width:100%;">
             <paper-material id="card" elevation="2">
                 
-                <!--Job Title And Logo-->
-                <div class="horizontal layout center">
+                <!--Job Title And Logo Header-->
+                <div style="border:2px black solid;" class="horizontal layout center">
                     <div class="flex-3">
                         <h1 class="mainHeader">{{jobName}}</h1>
+                        <p id="position">
+                            <span class="bold">Position:</span>
+                            {{position}}
+                        </p>
                     </div>
                     <div class="flex" >
                         <a target="_blank" href="[[logoLink]]">
@@ -87,47 +108,54 @@
                         </a>
                     </div>
                 </div>
-                <!--End Job Title And Logo-->
+                <!--End Job Title And Logo Header-->
 
-                <!--Position, Time, and Location-->
-                <div class="horizontal layout">
-                    <div class="flex" style="word-wrap: break-word;">
-                        <p>
-                            <span class="bold">Position:</span>
-                            {{position}}
-                        </p>
-                        <p>
-                            <span class="bold">Duration:</span>
-                            {{duration}}
-                        </p>
-                        <p>
-                            <span class="bold">Location:</span>
-                            {{location}}
-                        </p>
+                <!--PAPER TABS-->
+                <paper-tabs id="tabs" selected="{{selected}}">
+                    <paper-tab class="tab">Description</paper-tab>
+                    <paper-tab class="tab">Highlights</paper-tab>
+                    <paper-tab class ="tab">Skills</paper-tab>
+                </paper-tabs>
+                <!--END PAPER TABS-->
 
+                <!--IRON PAGES (PAPER TABS CONTENT)-->
+                <iron-pages selected="{{selected}}">
+                    <div>
+                        <!--Position, Time, and Location-->
+                        <div class="horizontal layout">
+                            <div class="flex" style="word-wrap: break-word;">
+                                <p>
+                                    <span class="bold">Duration:</span> {{duration}}
+                                </p>
+                                <p>
+                                    <span class="bold">Location:</span>{{location}}
+                                </p>
+                                <p>
+                                    <span class="bold">Description:</span> {{descr}}
+                                </p>
+                            </div>
+                        </div>
+                        <!--End Position, Time, and Location-->
                     </div>
-                </div>
-                <!--End Position, Time, and Location-->
-                
-                <!--Overall Description-->
-                <div>
-                   
-                </div>
-                <!--End Overall Description-->
+                    <div>
+                        <!--Main Experince Points-->
+                        <div>
+                            <template is="dom-repeat" items="{{experience}}">
+                                <p>{{item.header}}</p>
+                                <p>{{item.content}}</p>
+                            </template>
+                        </div>
+                        <!--End Main Experince Points-->
+                    </div>
+                    <div>
+                        <!--Skills Used on the Job-->
+                        <div>
 
-                <!--Main Experince Points-->
-                <div>
-
-                </div>
-                <!--End Main Experince Points-->
-
-                <!--Skills Used on the Job-->
-                <div>
-
-                </div>
-                <!--End Skills Used on the Job-->
-
-                
+                        </div>
+                        <!--End Skills Used on the Job-->
+                    </div>
+                </iron-pages>
+                <!--END IRON PAGES (PAPER TABS CONTENT)-->
             
             </paper-material>
         </div>
@@ -184,6 +212,10 @@
 
             backClick: function (event) {
                 this.fire('back-click');
+            },
+            ready:function()
+            {
+                this.selected = 0;
             }
 
         });

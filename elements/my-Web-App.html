@@ -37,7 +37,7 @@
                 font-size: 1em;
             }
 
-            #paperHeaderPanel {
+            #scrollPanel {
                 background-color: #D4FD99;
             }
             #content{
@@ -93,7 +93,7 @@
 				
 				
 				<!--Main body-->
-				<paper-header-panel main id="paperHeaderPanel">
+				<paper-scroll-header-panel main id="scrollPanel">
 					<paper-toolbar class="mainToolbar">
 						<paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
 						<div class="header">Tim Nortman</div>
@@ -116,12 +116,16 @@
                             </section>
 						</iron-pages>
 					</div>
+                    <div style="height:500px; background-color:orange;">
+
+                    </div>
 				
-				</paper-header-panel>
+				</paper-scroll-header-panel>
 			
 			</paper-drawer-panel>
 		</template>
         <script>
+            
             Polymer({
                 is: "my-Web-App",
                 properties: {
@@ -134,6 +138,9 @@
                 navigate: function () {
                     this.pageSelected = event.target.getAttribute("page");
                 }
+                
+
+                
             });
         </script>
 	</dom-module>
