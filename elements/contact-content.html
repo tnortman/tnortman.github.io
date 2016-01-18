@@ -16,12 +16,21 @@
 
             }
             paper-icon-button {
-                --paper-icon-button-ink-color:white;
+                --paper-icon-button-ink-color:blue;
             }
             #contentContainer{
                 margin:5px;
             }
-            @media only screen and (max-width: 600px){
+
+            .contact-Buttons{
+                --paper-icon-button:{
+                    width:50px;
+                    height:50px;
+                }
+            }
+
+            /*If screen is smaller than 600px apply these rules.*/
+            @media only screen and (max-width: 600px) {
                 #imageProtector{
                     display:none;
                 }
@@ -46,13 +55,14 @@
                     </p>
                 </div>
                 <div class="layout horizontal wrap center-justified">
-                    <paper-icon-button icon="icons:mail"></paper-icon-button>
-                    <paper-icon-button src="../img/In-2CRev-128px-TM.png" alt="linkedIn"></paper-icon-button>
+                    <paper-icon-button class="contact-Buttons" icon="icons:mail"></paper-icon-button>
+                    <paper-icon-button class="contact-Buttons" src="../img/In-2CRev-128px-TM.png" alt="linkedIn"></paper-icon-button>
                 </div>
                 
             </div>
 
             <!--My Image Container-->
+            <!--Consider flex for in the future-->
             <div id="imageProtector"style="width:400px;">
 
             </div>
