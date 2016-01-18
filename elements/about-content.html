@@ -4,11 +4,11 @@
 <dom-module id="about-content">
     <template>
         <style>
-            .header {
-                font-family: 'Raleway', sans-serif;
-                font-weight: 300;
+            .mainHeader {
                 font-size: 3em;
                 margin-left: 2%;
+                margin-top: 10px;
+                margin-bottom: 10px;
             }
 
             .myPicImage {
@@ -24,23 +24,6 @@
                 /* Positioning picture on face */
                 background-position: -30px -25px;
                 margin: 10px;
-                @apply(--layout-end-justified);
-            }
-
-            .aboutContainer {
-                @apply(--layout-horizontal);
-                @apply(--layout-wrap);
-                
-                /*background:#FFB59A;*/
-                /*border: 2px solid;*/
-            }
-
-            .flexchild {
-                @apply(--layout-flex);
-            }
-
-            .paper-material {
-                background: #0367F0;
             }
 
             /*If screen is less than 600px lets change the look*/
@@ -52,11 +35,36 @@
                     background-position: -80px -65px;
                 }
             }
+            /*If screen is less than 400px lets change the look*/
+            @media only screen and (max-width: 400px) {
+                .myPicImage {
+                    width: 150px;
+                    height: 150px;
+                    /* Positioning picture on face */
+                    background-position: 0px 0px;
+                    background-size:cover;
+                    
+                }
+            }
         </style>
 
-        <paper-material class="aboutContainer" elevation="1">
-            <p class="header flexchild">About Me</p>
-            <div class="myPicImage"></div>
+        <paper-material elevation="1">
+            <div class="layout horizontal wrap">
+                <div class="flex">
+                    <p class="mainHeader">About Me</p>
+                    <div>
+                        <p>
+                            Since this is a website and not a actual paper resume, you
+                            can get a better picture of me by more detail. Blah blah
+                            And something about my work, your looking right at it!
+                        </p>
+                    </div>
+                </div>
+                <div class="end-justified">
+                    <div class="myPicImage"></div>
+                </div>
+            </div>
+            
         </paper-material>
     </template>
 

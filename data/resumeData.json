@@ -46,14 +46,14 @@
 		 ],
          "color":"#FF8558",
          "logo":"../img/glx_logo.png",
-		 "logoLink":"https://www.google.com/"
+		 "logoLink":"https://www.greenlifexpo.com/"
       },
       {
-         "jobName":"Test Job",
-		 "position":"Being a tester",
-		 "duration":"Forever 2017",
-		 "location":"The Lab, NY",
-         "descr":"Tested a bunch of stuff somewhere in a lab in New York.",
+         "jobName":"University of Wisconsin - Green Bay",
+		 "position":"Lab Consultant",
+		 "duration":"January 2014 - Current",
+		 "location":"Green Bay, WI",
+         "descr":"General Lab Duties Description Stuff don't ya know",
 		 "experience":[
 			{
 				"header":"Lorem ipsum",
@@ -69,8 +69,8 @@
 			}
 		 ],
          "color":"#FFB59A",
-         "logo":"../img/test_logo.png",
-		 "logoLink":"https://www.google.com/"
+         "logo":"../img/greenBayLogo2.png",
+		 "logoLink":"https://www.uwgb.edu/"
       },
       {
          "jobName":"Random Job",

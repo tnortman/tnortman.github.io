@@ -172,6 +172,9 @@
                 //SET HEIGHT OF LARGEST RESUME PAGE HERE!
                 this.$.pages.style.height = "1000px";
                 //this.$.pages.style.height = this.resumeContHght + "px";
+
+                this.$.pages.scrollIntoView({ block: "start", behavior: "smooth" });
+                
             },
 
             backClick: function (event) {

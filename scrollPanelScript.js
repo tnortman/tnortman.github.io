@@ -13,9 +13,12 @@ function WidthChange(mq) {
 	if (mq.matches) {
 	    document.getElementById("scrollPanel").fixed = true;
 	    
+	    
 	}
 	else {
 	    document.getElementById("scrollPanel").fixed = false;
+        //Thought this might work but it doesn't
+	    //document.getElementById("headerContainer").style.transform = "translate3d(0px,150px,0px)";
 	}
 
 }
