@@ -9,28 +9,56 @@
                 margin-bottom: 10px;
             }
 
-            .contactContainer {
-                @apply(--layout-vertical);
-                width:100%;
-            }
+            #contactContainer {
 
-            
+            }
+            #contactSummary{
+
+            }
+            paper-icon-button {
+                --paper-icon-button-ink-color:white;
+            }
+            #contentContainer{
+                margin:5px;
+            }
+            @media only screen and (max-width: 600px){
+                #imageProtector{
+                    display:none;
+                }
+            }
         </style>
 
-        <paper-material class="contactContainer" elevation="2">
+        <div id="contactContainer" class="layout horizontal">
 
-            <div class="flex">
-                <p class="mainHeader">Contact Me</p>
+            <!--Content Container-->
+            <div id="contentContainer"class="flex">
+                <!--Contact Header-->
+                <div class="flex">
+                    <p class="mainHeader">Contact Me</p>
+                </div>
+                <!--Breief Summary-->
+                <div id="contactSummary">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Aenean rutrum, arcu vitae rhoncus gravida, dolor tellus feugiat arcu, vitae sodales 
+                    ipsum orci non ligula. Nullam mattis urna dapibus nisl tincidunt faucibus. Aenean ut 
+                    aliquam quam.Nam tempus accumsan leo, sed sagittis leo dictum vel. Sed pulvinar 
+                    fermentum viverra. Aliquam id.
+                    </p>
+                </div>
+                <div class="layout horizontal wrap center-justified">
+                    <paper-icon-button icon="icons:mail"></paper-icon-button>
+                    <paper-icon-button src="../img/In-2CRev-128px-TM.png" alt="linkedIn"></paper-icon-button>
+                </div>
+                
             </div>
-            <div class="flex-3">
-                <p>Im alot of content</p>
-                <p>Im alot of content</p>
-                <p>Im alot of content</p>
-                <p>Im alot of content</p>
+
+            <!--My Image Container-->
+            <div id="imageProtector"style="width:400px;">
+
             </div>
-            
-        </paper-material>
-        
+
+        </div>
+
     </template>
     <script>
         Polymer({

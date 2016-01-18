@@ -15,9 +15,9 @@
                 font-family: 'Raleway', sans-serif;
                 font-weight: 300;
             }
-			paper-material:hover{
+			/*paper-material:hover{
 				@apply(--shadow-elevation-6dp);
-			}
+			}*/
             .jobName{
                 text-align:center;
             }
@@ -33,7 +33,8 @@
             id="paper-container"
 			on-click="tileClick"  
 			openCard$="{{openCard}}" 
-			style$="background:{{color}}">
+			style$="background:{{color}}"
+                        elevation="0">
 				
 				<p class="jobName">[[job]]</p>
 		        <img class="logo" src="{{logo}}" />
