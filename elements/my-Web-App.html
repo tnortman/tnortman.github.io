@@ -43,13 +43,20 @@
             #content{
                 height:100%;
             }
-            /*If screen is more than 750px lets change the look*/
-            @media only screen and (min-width: 750px) {
+            /*If screen is more than 600px lets change the look*/
+            @media only screen and (min-width: 600px) {
                 
 				.menu paper-item:hover{
 						background:#F3F8FE;
 				}
 			}
+
+            @media only screen and (max-width: 600px){
+                #content {
+                    background-image: none !important;
+                }
+            }
+            
 		</style>
 		
 		<template>
@@ -100,7 +107,7 @@
 					</paper-toolbar>
 					
 					<!--Main Content-->
-					<div id="content" >
+					<div id="content">
 						<iron-pages id="ironPageMainContent" attr-for-selected="data-route" selected="{{pageSelected}}">
 							<section data-route="about">
 								<about-content></about-content>
@@ -116,10 +123,7 @@
                             </section>
 						</iron-pages>
 					</div>
-                    <div style="height:500px; background-color:orange;">
 
-                    </div>
-				
 				</paper-scroll-header-panel>
 			
 			</paper-drawer-panel>
@@ -132,13 +136,32 @@
                     //the intial landing page
                     pageSelected: {
                         type: String,
-                        value: "resume"
+                        value: "contact"
                     }
+                },
+                listeners:{
+                    'iron-select': 'setBg'
                 },
                 navigate: function () {
                     this.pageSelected = event.target.getAttribute("page");
+                },
+
+                //Sets the background image of the contact section
+                setBg: function (e) {
+                    var content = document.getElementById("content");
+
+                    if (this.pageSelected.localeCompare("contact") == 0)
+                    {
+                        content.style.backgroundImage = "url(../img/testContact.png)";
+                        content.style.backgroundSize = "cover";
+                        content.style.backgroundPosition = "100% 0%";
+                        console.log("changing background...");
+                    }
+                    else
+                    {
+                        content.style.backgroundImage = "none";
+                    }
                 }
-                
 
                 
             });

@@ -75,7 +75,7 @@
                                                on-click="downloadResume">
                             </paper-icon-button>
                         
-                        <paper-material elevation="3" id="downloadIconTag">Download Resume</paper-material>
+                        <paper-material elevation="0" id="downloadIconTag">Download Resume</paper-material>
                     </div>
                 </div>
             </div> 
@@ -166,8 +166,7 @@
             },
 
             tileClick: function (event) {
-                //this.resumeContHght = this.$.pages.clientHeight;
-
+                //Set next neon page to animate to 
                 this.selectedNeonPage = event.detail.openCard;
 
                 //SET HEIGHT OF LARGEST RESUME PAGE HERE!
@@ -176,7 +175,9 @@
             },
 
             backClick: function (event) {
+                //Animate back to neon page 0
                 this.selectedNeonPage = 0;
+                //Set height to 100% of content
                 this.$.pages.style.height = "100%";
 
             },

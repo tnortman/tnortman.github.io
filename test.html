@@ -12,21 +12,33 @@
 
     <style>
         /*Deafult font*/
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+
+        }
+
         body {
             font-family: 'Raleway', sans-serif;
             font-weight: 300;
-            height:500px;
+            
+        }
+        #test{
+            background-color:orange;
+            
+            
+            
         }
     </style>
 </head>
 <body fullbleed unresolved vertical>
-    
-        <collapsible-header header-text="Techskilz">
-            <p>I am some content</p>
-        </collapsible-header>
-        <collapsible-header header-text="Second">
-            <p>I am some content</p>
-        </collapsible-header>
-   
+    <div class="layout horizontal">
+        <div class="layout horizontal wrap center-justified">
+            <paper-icon-button icon="icons:mail"></paper-icon-button>
+            <paper-icon-button src="../img/In-2CRev-128px-TM.png" alt="linkedIn"></paper-icon-button>
+        </div>
+    </div>
 </body>
 </html>
