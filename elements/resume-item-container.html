@@ -15,9 +15,9 @@
 				@apply(--layout-wrap);
 				@apply(--layout-center-justified);
 			}
-			resume-item{
-				margin:5px;
-			}
+            .resumeItem {
+                margin: 5px;
+            }
 		</style>
 		<!--End Styling for resume-item element-->
 			
@@ -29,7 +29,8 @@
         <div class="itemContainer">
             <template is="dom-repeat" items="[[resumeData.items]]">
 
-                <resume-item on-tile-click="tileClick"
+                <resume-item class="resumeItem"
+                             on-tile-click="tileClick"
                              open-card="{{index}}"
                              job="[[item.jobName]]"
                              color="[[item.color]]"
@@ -47,13 +48,20 @@
         is: "resume-item-container",
 
         behaviors: [
-			Polymer.NeonSharedElementAnimatableBehavior
+            Polymer.NeonAnimationRunnerBehavior,
+            Polymer.NeonSharedElementAnimatableBehavior
         ],
 
         properties: {
             animationConfig: {
                 value: function () {
+                    
                     return {
+                        'entry':{
+                            name:'cascaded-animation',
+                            animation: 'scale-up-animation',
+                            nodes: document.getElementsByTagName("resume-item"),
+                        },
                         'exit': [{
                             name: 'hero-animation',
                             id: 'hero',
@@ -78,6 +86,11 @@
                 'ripple': event.detail.tileClicked
             }
         },
+        //Used for playing the cascaded-animation when the user clicks the collpasible Element
+        playEntryAnimation:function()
+        {
+            this.playAnimation('entry');
+        }
     });
 </script>
 

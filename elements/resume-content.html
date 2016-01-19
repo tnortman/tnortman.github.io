@@ -40,7 +40,6 @@
                  width: 100%;
                  border-color: #FFB59A;
              }
-
              #downloadIconTag {
                  visibility: hidden;
                  opacity: 0;
@@ -102,12 +101,12 @@
             
 
             <!--Employment-->
-            <collapsible-header header-text="Employment">
+            <collapsible-header id="empColHead" header-text="Employment" on-click="playEmployAnima">
                 <!--Employment Items-->
                 <div id="rippleCont">
                     <neon-animated-pages id="pages" selected="[[selectedNeonPage]]">
 
-                        <resume-item-container on-tile-click="tileClick">
+                        <resume-item-container id="resumeItemCont" on-tile-click="tileClick">
                         </resume-item-container>
 
                         <template is="dom-repeat" items="{{resumeData.items}}">
@@ -132,9 +131,9 @@
             
 
             <!--Technical Skills-->
-            <collapsible-header header-text="Technical Skills">
+            <collapsible-header id="skillColHead" header-text="Technical Skills" on-click="playSkillAnima">
                 <div class="vertical layout">
-                    <p class="content">Some content</p>
+                    <skills-section id="skillsSection"></skills-section>
                 </div>
             </collapsible-header>
             <!--End Technical Skills-->
@@ -192,7 +191,18 @@
                 link.href = '../uploads/Resume(Test).docx';
                 link.click();
                 this.$.resumeDownloadToast.open();
-            }
+            },
+            //Plays cascade animation of resumeContainer
+            playEmployAnima:function()
+            {
+                if (this.$.empColHead.opened)
+                    this.$.resumeItemCont.playEntryAnimation();
+            },
+            //playSkillAnima:function()
+            //{
+            //    if (this.$.skillColHead.opened)
+            //        this.$.skillsSection.playSkillItemsEntryAnimation();
+            //}
            
         });
 

@@ -1,0 +1,16 @@
+{
+   "items":[
+      {
+         "skillName":"C#",
+		 "color": "#619EF3"
+      },
+	  {
+         "skillName":"Java",
+		 "color": "#619EF4"
+      },
+	  {
+         "skillName":"Polymer",
+		 "color": "#619EF5"
+      }
+   ]
+}
