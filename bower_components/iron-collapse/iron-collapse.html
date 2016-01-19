@@ -156,7 +156,9 @@ and instead put a div inside and style that.
       this._updateTransition(false);
       // If we can animate, must do some prep work.
       if (animated && !this.noAnimation) {
-        // Animation will start at the current size.
+        // don't display scrollbars during animation
+        this.style.overflow = 'hidden';
+		// Animation will start at the current size.
         var startSize = this._calcSize();
         // For `auto` we must calculate what is the final size for the animation.
         // After the transition is done, _transitionEnd will set the size back to `auto`.
@@ -221,6 +223,8 @@ and instead put a div inside and style that.
       this.toggleClass('iron-collapse-closed', !this.opened);
       this.toggleClass('iron-collapse-opened', this.opened);
       this._updateTransition(false);
+	  // if needed, display scrollbars after transition
+      this.style.overflow = 'hidden';
     },
 
     _calcSize: function() {

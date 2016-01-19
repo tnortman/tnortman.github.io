@@ -49,15 +49,25 @@
     <script>
         Polymer({
             is: 'collapsible-header',
-
+            properties:{
+                opened: {
+                    type: Boolean,
+                    value: false
+                }
+            },
             toggleCollapse: function (event) {
 
                 this.$.collapseableElement.toggle();
 
-                if(this.$.collapseableElement.opened)
+                if (this.$.collapseableElement.opened) {
                     this.$.dropDownArrow.style.transform = "rotate(180deg)";
-                else
+                    this.opened = true;
+                }
+                else {
                     this.$.dropDownArrow.style.transform = "rotate(0deg)";
+                    this.opened = false;
+                }
+                    
 
             }
         });
