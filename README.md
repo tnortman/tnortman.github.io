@@ -1,6 +1,6 @@
 # tnortman.github.io
 #### Description
-My personal website that is built with Polymer 1.0.
+My personal website that is built with Polymer 1.0. **Please remember, at this point it is still a _work in progress_!**
 
 #### To View
 To view my website:
