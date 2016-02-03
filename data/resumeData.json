@@ -5,19 +5,19 @@
 		 "position":"IT Intern",
 		 "duration":"June 2015 - Current",
 		 "location":"Green Bay, WI",
-         "descr":"I worked in the IT Department",
+         "descr":"I am the first ever IT Intern for Ameriprise Auto & Home. I worked full time in the Summer of 2015 and continue to work part-time as an intern through my college career. I have worked in various departments including Interactive, Claims, and Buisness Intelligence.",
 		 "experience":[
 			{
-				"header":"Status Dashboard",
-				"content":"Created a dashboard that tracked the availablity of the companies websites. Became creative by implementing weather UI to display results."
+				"header":"Site Analytics Dashboard",
+				"content":"Worked with Interactive team to design and develop a dashboard that tracks the availablity and response time of the companies services. Conceptualized and integrated the idea of weather showing health (availablity/response time) of our services."
 			},
 			{
-				"header":"Another Item",
-				"content":"Here is another item, apparently you can't hit return in JSON nor undo actions in notepad++ :C"
+				"header":"Mobile App Presentation",
+				"content":"Prepared and presented a suggestion to the IT Leaders to develop a mobile application for the company."
 			},
 			{
-				"header":"Last",
-				"content":"Yet another test item that is here to take up space. My fingers are getting tired."
+				"header":"Software Maintenance",
+				"content":"Redesigned and applied minor changes to internal software that reduced company employees work/time for submitting data entries."
 			}
 		 ],
          "color":"#FFB59A",
@@ -29,19 +29,15 @@
 		 "position":"Webmaster",
 		 "duration":"January 2012 - September 2015",
 		 "location":"Black River Falls, WI",
-         "descr":"I was the webmaster for the non-profit organization GreenLifeXpo. GreenLifeXpo holds an exposition on a yearly basis and I created their website for them.",
+         "descr":"I was the webmaster for the non-profit organization GreenLifeXpo for 3.5 years. GreenLifeXpo is a orginization that holds an exposition on a yearly basis educating the community on 'green' practices. I was asked as a senior in High School to develop a website for them and enthusiastically accepted. I desinged, implemented, and maintained 'greenlifexpo.com' until September of 2015. (Note: I have archived the last availabe state of 'greenlifexpo.com' while under my responsibilty. It can be viewed at http://greenlifexpo.altervista.org",
 		 "experience":[
 			{
-				"header":"Lorem ipsum",
-				"content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis, dui id ultricies porta, nisl massa condimentum nisi, id maximus ipsum dui a lectus. Aenean finibus odio eu felis commodo sagittis. Cum sociis natoque penatibus et magnis dis parturient montes."
+				"header":"Site Creation and Maintenance",
+				"content":"Designed, developed, and maintained 'greenlifexpo.com' for 3.5 years"
 			},
 			{
-				"header":"Sit Amet",
-				"content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sapien ligula, gravida vitae nisl vel, lacinia porta purus. Pellentesque vitae massa ac turpis consequat sodales vitae id dolor. Donec quis ante aliquet est iaculis porttitor. Phasellus facilisis felis dui, non."
-			},
-			{
-				"header":"Pellentesque",
-				"content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec nulla non sem laoreet feugiat et quis enim. Aliquam in est tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla imperdiet sit amet nulla."
+				"header":"Technology Aid & Volunteer",
+				"content":"Acted as a technology aid setting up presentation hardware and any other general technology needs at yearly GreenLifeXpo exposition."
 			}
 		 ],
          "color":"#FF8558",
@@ -53,19 +49,19 @@
 		 "position":"Lab Consultant",
 		 "duration":"January 2014 - Current",
 		 "location":"Green Bay, WI",
-         "descr":"General Lab Duties Description Stuff don't ya know",
+         "descr":"A on-campus job at the University of Wisconsin - Green Bay where I acted as a technology reference in the General Access Computer Labs. ",
 		 "experience":[
 			{
-				"header":"Lorem ipsum",
-				"content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis, dui id ultricies porta, nisl massa condimentum nisi, id maximus ipsum dui a lectus. Aenean finibus odio eu felis commodo sagittis. Cum sociis natoque penatibus et magnis dis parturient montes."
+				"header":"Software and Hardware Advisor",
+				"content":"Answered software and hardware questions of student and faculty."
 			},
 			{
-				"header":"Sit Amet",
-				"content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sapien ligula, gravida vitae nisl vel, lacinia porta purus. Pellentesque vitae massa ac turpis consequat sodales vitae id dolor. Donec quis ante aliquet est iaculis porttitor. Phasellus facilisis felis dui, non."
+				"header":"Customer Serivce",
+				"content":"Aided student and faculty reserve labs and project rooms as well as answer general campus-knowledge questions."
 			},
 			{
-				"header":"Pellentesque",
-				"content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec nulla non sem laoreet feugiat et quis enim. Aliquam in est tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla imperdiet sit amet nulla."
+				"header":"General Cleaning",
+				"content":"Maintained the cleanliness of the lab; general cleaning duties."
 			}
 		 ],
          "color":"#FFB59A",
@@ -73,52 +69,24 @@
 		 "logoLink":"https://www.uwgb.edu/"
       },
       {
-         "jobName":"Random Job",
-		 "position":"At Random Inc.",
-		 "duration":"Never 2016",
-		 "location":"Earth",
-         "descr":"Not sure, never worked here.",
+         "jobName":"Black River State Forest (WI-DNR)",
+		 "position":"Visitors Service Associate",
+		 "duration":"Summer 2014",
+		 "location":"Black River Falls, WI",
+         "descr":"Acted as Limited Term Employee for the Wisconsin Department of Natural Resources at the Black River State Forest.",
 		 "experience":[
 			{
-				"header":"Lorem ipsum",
-				"content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis, dui id ultricies porta, nisl massa condimentum nisi, id maximus ipsum dui a lectus. Aenean finibus odio eu felis commodo sagittis. Cum sociis natoque penatibus et magnis dis parturient montes."
+				"header":"Customer Serivce",
+				"content":"Registered campers and disseminated information about campgrounds over phones and in person to walk-in customers."
 			},
 			{
-				"header":"Sit Amet",
-				"content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sapien ligula, gravida vitae nisl vel, lacinia porta purus. Pellentesque vitae massa ac turpis consequat sodales vitae id dolor. Donec quis ante aliquet est iaculis porttitor. Phasellus facilisis felis dui, non."
-			},
-			{
-				"header":"Pellentesque",
-				"content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec nulla non sem laoreet feugiat et quis enim. Aliquam in est tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla imperdiet sit amet nulla."
+				"header":"Recreational Area Maintenance",
+				"content":"Worked with team members to efficently cleaned facilities and manage outlying campgrounds."
 			}
 		 ],
          "color":"#FF8558",
-         "logo":"../img/test_logo.png",
-		 "logoLink":"https://www.google.com/"
-      },
-      {
-         "jobName":"My Life",
-		 "position":"Myself",
-		 "duration":"June 1994 - January 2016",
-		 "location":"USA",
-         "descr":"Bein myself",
-		 "experience":[
-			{
-				"header":"Lorem ipsum",
-				"content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis, dui id ultricies porta, nisl massa condimentum nisi, id maximus ipsum dui a lectus. Aenean finibus odio eu felis commodo sagittis. Cum sociis natoque penatibus et magnis dis parturient montes."
-			},
-			{
-				"header":"Sit Amet",
-				"content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sapien ligula, gravida vitae nisl vel, lacinia porta purus. Pellentesque vitae massa ac turpis consequat sodales vitae id dolor. Donec quis ante aliquet est iaculis porttitor. Phasellus facilisis felis dui, non."
-			},
-			{
-				"header":"Pellentesque",
-				"content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec nulla non sem laoreet feugiat et quis enim. Aliquam in est tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla imperdiet sit amet nulla."
-			}
-		 ],
-         "color":"#FF5719",
-         "logo":"../img/test_logo.png",
-		 "logoLink":"https://www.google.com/"
+         "logo":"../img/wi_dnr_logo.png",
+		 "logoLink":"http://dnr.wi.gov/topic/stateforests/blackriver/"
       }
    ]
 }
