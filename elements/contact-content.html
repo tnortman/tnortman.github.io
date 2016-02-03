@@ -55,9 +55,9 @@
                     </p>
                 </div>
                 <div class="layout horizontal wrap center-justified">
-                    <paper-icon-button class="contact-Buttons" icon="icons:mail"></paper-icon-button>
-                    <paper-icon-button class="contact-Buttons" src="../img/In-2CRev-128px-TM.png" alt="linkedIn"></paper-icon-button>
-                    <paper-icon-button class="contact-Buttons" src="../img/GitHub-Mark-120px-plus.png" alt="GitHub></paper-icon-button>
+                    <paper-icon-button class="contact-Buttons" icon="icons:mail" on-tap="openEmail"></paper-icon-button>
+                    <paper-icon-button class="contact-Buttons" src="../img/In-2CRev-128px-TM.png" alt="linkedIn" on-tap="openLinkedIn"></paper-icon-button>
+                    <paper-icon-button class="contact-Buttons" src="../img/GitHub-Mark-120px-plus.png" alt="GitHub" on-tap="openGitHub"> </paper-icon-button>
                 </div>
                 
             </div>
@@ -73,7 +73,16 @@
     </template>
     <script>
         Polymer({
-            is: "contact-content"
+            is: "contact-content",
+            openGitHub:function(){
+                window.open("https://github.com/tnortman", '_blank');
+            },
+            openLinkedIn:function(){
+                window.open("https://www.linkedin.com/in/timothy-nortman-631042b4", '_blank');
+            },
+            openEmail:function(){
+                window.location.href = "mailto:norttj21@uwgb.edu?subject=Just Saying Hey!";
+            },
         });
     </script>
 </dom-module>
