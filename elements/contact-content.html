@@ -9,11 +9,13 @@
                 margin-bottom: 10px;
             }
 
-            #contactContainer {
-
+            .transBG {
+                background: rgba(255, 255, 255, 0.8);
+                
             }
             #contactSummary{
-
+                padding: 5px;
+                border-radius: 15px 30px;
             }
             paper-icon-button {
                 --paper-icon-button-ink-color:blue;
@@ -46,18 +48,19 @@
                     <p class="mainHeader">Say hey!</p>
                 </div>
                 <!--Breief Summary-->
-                <div id="contactSummary">
+                <div id="contactSummary" class="transBG">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                     Aenean rutrum, arcu vitae rhoncus gravida, dolor tellus feugiat arcu, vitae sodales 
                     ipsum orci non ligula. Nullam mattis urna dapibus nisl tincidunt faucibus. Aenean ut 
                     aliquam quam.Nam tempus accumsan leo, sed sagittis leo dictum vel. Sed pulvinar 
                     fermentum viverra. Aliquam id.
                     </p>
-                </div>
+                
                 <div class="layout horizontal wrap center-justified">
                     <paper-icon-button class="contact-Buttons" icon="icons:mail" on-tap="openEmail"></paper-icon-button>
                     <paper-icon-button class="contact-Buttons" src="../img/In-2CRev-128px-TM.png" alt="linkedIn" on-tap="openLinkedIn"></paper-icon-button>
                     <paper-icon-button class="contact-Buttons" src="../img/GitHub-Mark-120px-plus.png" alt="GitHub" on-tap="openGitHub"> </paper-icon-button>
+                </div>
                 </div>
                 
             </div>
