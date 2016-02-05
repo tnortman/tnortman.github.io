@@ -1,0 +1,87 @@
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+	
+<dom-module id="resume-item">
+	
+	
+	<template>
+		<!--Start Styling for resume-item element-->
+		<style>
+
+            #paper-container{
+                width: 150px;
+                height: 150px;
+                cursor: pointer;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 300;
+            }
+			
+            .jobName{
+                text-align:center;
+            }
+            .logo{
+                max-width:100%;
+                
+            }
+            
+            /*Default elevation for hover of 0 for mobile*/
+            paper-material:hover {
+                @apply(--shadow-elevation-0dp);
+            }
+
+            /*If screen is bigger than 600px apply these rules.
+            Lets add the shadows back in for desktop, and exclude them for mobile(lag on ripple)*/
+            @media only screen and (min-width: 600px) {
+                paper-material{
+				    @apply(--shadow-elevation-4dp);
+			    }
+                paper-material:hover{
+				    @apply(--shadow-elevation-6dp);
+			    }
+
+
+            }
+
+		</style>
+		<!--End Styling for resume-item element-->
+		
+		<!--Start Element template-->
+		<paper-material
+            id="paper-container"
+			on-click="tileClick"  
+			openCard$="{{openCard}}" 
+			style$="background:{{color}}" elevation="0">
+				
+				<p class="jobName">[[job]]</p>
+		        <img class="logo" src="{{logo}}" />
+		</paper-material>
+		<!--End Element template-->
+		
+	</template>
+	
+	<script>
+		Polymer({
+			is:"resume-item",
+
+			properties:{
+				
+			},
+			tileClick:function(event){
+                //Sets target to what was clicked on (within paper-material element)
+			    var target = event.target;
+			    
+                //Sets to parent, paper-material, if not itself
+			    while ((target.id).localeCompare("paper-container") != 0)
+			        target = target.parentNode;
+
+                //Opens the resumeDetailItem Card associated with it (if 4rth tile, opens 5th neon page)
+				var openCard = (parseInt(target.getAttribute("openCard"))+1).toString();
+
+				this.fire('tile-click', {
+					tileClicked: target,
+					openCard: openCard
+				});
+			}
+		});
+	</script>
+</dom-module>

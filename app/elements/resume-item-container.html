@@ -1,0 +1,98 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+	
+<dom-module id="resume-item-container">
+		
+	<template>
+        <!--Start Styling for resume-item element-->
+		<style>
+            :host {
+                display:block;
+                position:relative;
+            }
+            .itemContainer{
+                @apply(--layout-horizontal);
+				@apply(--layout-wrap);
+				@apply(--layout-center-justified);
+			}
+            .resumeItem {
+                margin: 5px;
+            }
+		</style>
+		<!--End Styling for resume-item element-->
+			
+		<!--Start Element template-->
+        
+        <!--Import the data for the detail pages from a JSON file-->
+        <iron-ajax auto url="../data/resumeData.json" handle-as="json" last-response="{{resumeData}}"></iron-ajax>
+        
+        <div class="itemContainer">
+            <template is="dom-repeat" items="[[resumeData.items]]">
+
+                <resume-item class="resumeItem"
+                             on-tile-click="tileClick"
+                             open-card="{{index}}"
+                             job="[[item.jobName]]"
+                             color="[[item.color]]"
+                             logo="[[item.logo]]">
+                </resume-item>
+
+            </template>
+		</div>
+		<!--End Element template-->
+			
+	</template>
+    
+    <script>
+    Polymer({
+        is: "resume-item-container",
+
+        behaviors: [
+            Polymer.NeonAnimationRunnerBehavior,
+            Polymer.NeonSharedElementAnimatableBehavior
+        ],
+
+        properties: {
+            animationConfig: {
+                value: function () {
+                    
+                    return {
+                        'entry':{
+                            name:'cascaded-animation',
+                            animation: 'scale-up-animation',
+                            nodes: document.getElementsByTagName("resume-item"),
+                        },
+                        'exit': [{
+                            name: 'hero-animation',
+                            id: 'hero',
+                            fromPage: this
+                        },
+						{
+						    name: 'ripple-animation',
+						    id: 'ripple',
+						    fromPage: this
+						},
+						{
+						    name: 'fade-out-animation',
+						    node: this.$.itemContainer
+						}]
+                    }
+                }
+            }
+        },
+        tileClick: function (event) {
+            this.sharedElements = {
+                'hero': event.detail.tileClicked,
+                'ripple': event.detail.tileClicked
+            }
+        },
+        //Used for playing the cascaded-animation when the user clicks the collpasible Element
+        playEntryAnimation:function()
+        {
+            this.playAnimation('entry');
+        }
+    });
+</script>
+
+</dom-module>
+

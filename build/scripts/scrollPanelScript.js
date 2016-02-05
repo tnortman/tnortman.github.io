@@ -1,0 +1,1 @@
+function WidthChange(e){e.matches?document.getElementById("scrollPanel").fixed=!0:document.getElementById("scrollPanel").fixed=!1}if("complete"===document.readyState&&matchMedia){var mq=window.matchMedia("(min-width: 600px)");mq.addListener(WidthChange),WidthChange(mq)}

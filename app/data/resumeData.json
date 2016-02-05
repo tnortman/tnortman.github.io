@@ -1,0 +1,92 @@
+{
+   "items":[
+      {
+         "jobName":"Ameriprise Auto & Home",
+		 "position":"IT Intern",
+		 "duration":"June 2015 - Current",
+		 "location":"Green Bay, WI",
+         "descr":"I am the first ever IT Intern for Ameriprise Auto & Home. I worked full time in the Summer of 2015 and continue to work part-time as an intern through my college career. I have worked in various departments including Interactive, Claims, and Buisness Intelligence.",
+		 "experience":[
+			{
+				"header":"Site Analytics Dashboard",
+				"content":"Worked with Interactive team to design and develop a dashboard that tracks the availablity and response time of the companies services. Conceptualized and integrated the idea of weather showing health (availablity/response time) of our services."
+			},
+			{
+				"header":"Mobile App Presentation",
+				"content":"Prepared and presented a suggestion to the IT Leaders to develop a mobile application for the company."
+			},
+			{
+				"header":"Software Maintenance",
+				"content":"Redesigned and applied minor changes to internal software that reduced company employees work/time for submitting data entries."
+			}
+		 ],
+         "color":"#FFB59A",
+         "logo":"build/images/ameriprise_logo.png",
+		 "logoLink":"https://www.ameriprise.com/auto-home-insurance/"
+      },
+      {
+         "jobName":"GreenLifeXpo",
+		 "position":"Webmaster",
+		 "duration":"January 2012 - September 2015",
+		 "location":"Black River Falls, WI",
+         "descr":"I was the webmaster for the non-profit organization GreenLifeXpo for 3.5 years. GreenLifeXpo is a orginization that holds an exposition on a yearly basis educating the community on 'green' practices. I was asked as a senior in High School to develop a website for them and enthusiastically accepted. I desinged, implemented, and maintained 'greenlifexpo.com' until September of 2015. (Note: I have archived the last availabe state of 'greenlifexpo.com' while under my responsibilty. It can be viewed at http://greenlifexpo.altervista.org",
+		 "experience":[
+			{
+				"header":"Site Creation and Maintenance",
+				"content":"Designed, developed, and maintained 'greenlifexpo.com' for 3.5 years"
+			},
+			{
+				"header":"Technology Aid & Volunteer",
+				"content":"Acted as a technology aid setting up presentation hardware and any other general technology needs at yearly GreenLifeXpo exposition."
+			}
+		 ],
+         "color":"#FF8558",
+         "logo":"build/images/glx_logo.png",
+		 "logoLink":"https://www.greenlifexpo.com/"
+      },
+      {
+         "jobName":"University of Wisconsin - Green Bay",
+		 "position":"Lab Consultant",
+		 "duration":"January 2014 - Current",
+		 "location":"Green Bay, WI",
+         "descr":"A on-campus job at the University of Wisconsin - Green Bay where I acted as a technology reference in the General Access Computer Labs. ",
+		 "experience":[
+			{
+				"header":"Software and Hardware Advisor",
+				"content":"Answered software and hardware questions of student and faculty."
+			},
+			{
+				"header":"Customer Serivce",
+				"content":"Aided student and faculty reserve labs and project rooms as well as answer general campus-knowledge questions."
+			},
+			{
+				"header":"General Cleaning",
+				"content":"Maintained the cleanliness of the lab; general cleaning duties."
+			}
+		 ],
+         "color":"#FFB59A",
+         "logo":"build/images/greenBayLogo2.png",
+		 "logoLink":"https://www.uwgb.edu/"
+      },
+      {
+         "jobName":"Black River State Forest (WI-DNR)",
+		 "position":"Visitors Service Associate",
+		 "duration":"Summer 2014",
+		 "location":"Black River Falls, WI",
+         "descr":"Acted as Limited Term Employee for the Wisconsin Department of Natural Resources at the Black River State Forest.",
+		 "experience":[
+			{
+				"header":"Customer Serivce",
+				"content":"Registered campers and disseminated information about campgrounds over phones and in person to walk-in customers."
+			},
+			{
+				"header":"Recreational Area Maintenance",
+				"content":"Worked with team members to efficently cleaned facilities and manage outlying campgrounds."
+			}
+		 ],
+         "color":"#FF8558",
+         "logo":"build/images/wi_dnr_logo.png",
+		 "logoLink":"http://dnr.wi.gov/topic/stateforests/blackriver/"
+      }
+   ]
+}

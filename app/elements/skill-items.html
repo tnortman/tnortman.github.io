@@ -1,0 +1,114 @@
+﻿
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="skill-items">
+    <template>
+        <style>
+            :host {
+                position: relative;
+                @apply(--layout-horizontal);
+                @apply(--layout-center-center);
+            }
+
+            .skillItem {
+                display: inline-block;
+                box-sizing: border-box;
+                width: 100px;
+                height: 100px;
+                margin: 16px;
+                border-radius: 50%;
+                position: relative;
+            }
+            .skillName {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+                color: white;
+            }
+        </style>
+
+        <div>
+            <template is="dom-repeat" items="[[skillData.items]]">
+                <div id="skillItem" 
+                     class="skillItem"
+                     on-click="skillClick"
+                     openNeonPage$="{{index}}"
+                     style$="background:[[item.color]];">
+                    <p class="skillName">{{item.skillName}}</p>
+                </div>
+            </template>
+        </div>
+
+    </template>
+
+</dom-module>
+
+<script>
+    Polymer({
+        is: 'skill-items',
+        behaviors: [
+          Polymer.NeonAnimationRunnerBehavior,
+          Polymer.NeonSharedElementAnimatableBehavior
+        ],
+        properties: {
+            animationConfig: {
+                value: function () {
+                    var skillItems = Polymer.dom(this.root).querySelectorAll('skillItem');
+                    var skillsArray = Array.prototype.slice.call(skillItems);
+                    return {
+                        'entry': [{
+                            name: 'cascaded-animation',
+                            animation: 'scale-up-animation',
+                            nodes: skillsArray
+                        }],
+                        'exit': [{
+                            name: 'hero-animation',
+                            id: 'hero',
+                            fromPage: this
+                        }, {
+                            name: 'cascaded-animation',
+                            animation: 'scale-down-animation'
+                        }]
+                    };
+                }
+            }
+        },
+        skillClick: function (event) {
+            //Set target to clicked (within this element)
+            var target = event.target;
+
+            //Sets to parent, if it itself does not contain the class skillItem
+            while ((target.id).localeCompare("skillItem") != 0)
+                target = target.parentNode;
+
+            this.sharedElements = {
+                'hero': target
+            };
+
+            //Setting all the nodes to scale (which is all but the one clicked on)
+            var nodesToScale = [];
+            var skillItems = document.getElementsByClassName("skillItem");
+            for (var node, index = 0; node = skillItems[index]; index++) {
+                if (node !== target) {
+                    nodesToScale.push(node);
+                }
+            }
+            this.animationConfig['exit'][1].nodes = nodesToScale;
+
+            //Set the neon page index to be opened
+            var indexNeonPage = (parseInt(target.getAttribute("openNeonPage")) + 1).toString();
+
+            this.fire('skill-click', {
+                openNeonPage: indexNeonPage
+            });
+            
+        },
+        playEntryAnimation:function()
+        {
+            this.playAnimation('entry');
+        }
+    });
+</script>

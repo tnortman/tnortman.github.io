@@ -1,0 +1,89 @@
+
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="resume-content">
+     <template>
+         <style is="custom-style">:host{display:block;height:100%}.mainHeader{font-size:3em;margin-top:10px;margin-bottom:10px}.header{font-size:2em;margin-top:10px;margin-bottom:10px}#objective{padding:5px}#rippleCont{height:100%;overflow:hidden}#pages{height:100%}#resCont{width:100%;height:100%}hr{width:100%;border-color:#FFB59A}#downloadIconTag{visibility:hidden;opacity:0;transition:visibility 0s linear .5s,opacity .5s linear;border:1px #000 solid;border-radius:5px;margin-left:auto;margin-top:-5px;padding:2px}#downloadIcon:hover+paper-material{visibility:visible;opacity:1;transition-delay:0s}</style><iron-ajax auto url="../data/resumeData.json" handle-as="json" last-response="{{resumeData}}"></iron-ajax>
+
+        <div id="resCont">
+            
+            <div class="vertical layout">
+                <div class="horizontal layout">
+                    <h1 class="mainHeader flex">Resume</h1>
+                    <div class="flex vertical layout">
+                        
+                            <paper-icon-button type="submit" id="downloadIcon" style="margin-left:auto" icon="icons:file-download" on-click="downloadResume">
+                            </paper-icon-button>
+                        
+                        <paper-material elevation="0" id="downloadIconTag">Download Resume</paper-material>
+                    </div>
+                </div>
+            </div> 
+            
+            
+            
+            
+            <collapsible-header header-text="Objective">
+                <div id="objectiveCont" style="position:relative" class="vertical layout flex">
+                    <div class="horizontal layout">
+                        <div class="flex">
+                            <p id="objective">
+                                Passionate and committed to excellence, I am a soon to be computer science graduate seeking an entry level position within a company that will help further my career goals.
+                            </p>
+                        </div>
+                        <div style="margin-left:auto;padding-right:5px">
+                            <iron-image style="height:100px;width:100px" sizing="contain" src="build/images/objective.png"></iron-image>
+                        </div>
+                    </div>
+                </div>
+            </collapsible-header>
+            
+
+            
+
+            
+            <collapsible-header id="empColHead" header-text="Employment" on-click="playEmployAnima">
+                
+                <div id="rippleCont">
+                    <neon-animated-pages id="pages" selected="[[selectedNeonPage]]">
+
+                        <resume-item-container id="resumeItemCont" on-tile-click="tileClick">
+                        </resume-item-container>
+
+                        <template is="dom-repeat" items="{{resumeData.items}}">
+                            <resume-detail-item id="test" on-back-click="backClick" job-name="{{item.jobName}}" position="{{item.position}}" duration="{{item.duration}}" location="{{item.location}}" descr="{{item.descr}}" experience="{{item.experience}}" color-fixed="{{item.color}}" logo="{{item.logo}}" logo-link="{{item.logoLink}}">
+                            </resume-detail-item>
+                        </template>
+
+                    </neon-animated-pages>
+                </div>
+            </collapsible-header>
+            
+            
+            
+
+            
+            <collapsible-header id="skillColHead" header-text="Technical Skills" on-click="playSkillAnima">
+                <div class="vertical layout">
+                    <skills-section id="skillsSection"></skills-section>
+                </div>
+            </collapsible-header>
+            
+
+            
+            
+            
+            <collapsible-header header-text="Extra Ciricular">
+                <div class="vertical layout">
+                    <p class="content">I am some content</p>
+                </div>
+            </collapsible-header>
+            
+        </div>
+
+         
+        <paper-toast id="resumeDownloadToast" text="Resume Download started..."></paper-toast>
+</template>
+
+    <script>Polymer({is:"resume-content",properties:{selectedNeonPage:{type:Number,value:0}},tileClick:function(e){this.selectedNeonPage=e.detail.openCard,this.$.pages.style.height="1000px",this.$.pages.scrollIntoView({block:"start",behavior:"smooth"})},backClick:function(e){this.selectedNeonPage=0,this.$.pages.style.height="100%"},downloadResume:function(){var e=document.createElement("a");e.download="Resume",e.href="../uploads/Resume(Test).docx",e.click(),this.$.resumeDownloadToast.open()},playEmployAnima:function(){this.$.empColHead.opened&&this.$.resumeItemCont.playEntryAnimation()}});</script></dom-module>

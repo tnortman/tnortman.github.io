@@ -1,0 +1,17 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+	
+<dom-module id="resume-item">
+	
+	
+	<template>
+		
+		<style>#paper-container{width:150px;height:150px;cursor:pointer;font-family:Raleway,sans-serif;font-weight:300}.jobName{text-align:center}.logo{max-width:100%}paper-material:hover{@apply(--shadow-elevation-0dp)}@media only screen and (min-width:600px){paper-material{@apply(--shadow-elevation-4dp)}paper-material:hover{@apply(--shadow-elevation-6dp)}}</style><paper-material id="paper-container" on-click="tileClick" opencard$="{{openCard}}" style$="background:{{color}}" elevation="0">
+				
+				<p class="jobName">[[job]]</p>
+		        <img class="logo" src="{{logo}}">
+		</paper-material>
+		
+		
+	</template>
+	
+	<script>Polymer({is:"resume-item",properties:{},tileClick:function(e){for(var r=e.target;0!=r.id.localeCompare("paper-container");)r=r.parentNode;var t=(parseInt(r.getAttribute("openCard"))+1).toString();this.fire("tile-click",{tileClicked:r,openCard:t})}});</script></dom-module>
