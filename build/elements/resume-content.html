@@ -33,7 +33,7 @@
                             </p>
                         </div>
                         <div style="margin-left:auto;padding-right:5px">
-                            <iron-image style="height:100px;width:100px" sizing="contain" src="build/images/objective.png"></iron-image>
+                            <iron-image style="height:100px;width:100px" sizing="contain" src="../images/objective.png"></iron-image>
                         </div>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
             
 
             
-            <collapsible-header id="empColHead" header-text="Employment" on-click="playEmployAnima">
+            <collapsible-header id="expColHeader" header-text="Experience" on-click="playEmployAnima">
                 
                 <div id="rippleCont">
                     <neon-animated-pages id="pages" selected="[[selectedNeonPage]]">
@@ -74,7 +74,7 @@
             
             
             
-            <collapsible-header header-text="Extra Ciricular">
+            <collapsible-header header-text="Extra Curricular">
                 <div class="vertical layout">
                     <p class="content">I am some content</p>
                 </div>
@@ -86,4 +86,4 @@
         <paper-toast id="resumeDownloadToast" text="Resume Download started..."></paper-toast>
 </template>
 
-    <script>Polymer({is:"resume-content",properties:{selectedNeonPage:{type:Number,value:0}},tileClick:function(e){this.selectedNeonPage=e.detail.openCard,this.$.pages.style.height="1000px",this.$.pages.scrollIntoView({block:"start",behavior:"smooth"})},backClick:function(e){this.selectedNeonPage=0,this.$.pages.style.height="100%"},downloadResume:function(){var e=document.createElement("a");e.download="Resume",e.href="../uploads/Resume(Test).docx",e.click(),this.$.resumeDownloadToast.open()},playEmployAnima:function(){this.$.empColHead.opened&&this.$.resumeItemCont.playEntryAnimation()}});</script></dom-module>
+    <script>Polymer({is:"resume-content",properties:{selectedNeonPage:{type:Number,value:0}},tileClick:function(e){this.selectedNeonPage=e.detail.openCard,this.$.pages.style.height="1000px",this.$.pages.scrollIntoView({block:"start",behavior:"smooth"})},backClick:function(e){this.selectedNeonPage=0,this.$.pages.style.height="100%"},downloadResume:function(){var e=document.createElement("a");e.download="Resume",e.href="../uploads/Resume(Test).docx",e.click(),this.$.resumeDownloadToast.open()},playEmployAnima:function(){this.$.expColHeader.opened&&this.$.resumeItemCont.playEntryAnimation()}});</script></dom-module>
