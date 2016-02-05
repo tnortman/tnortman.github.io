@@ -93,7 +93,7 @@
                             </p>
                         </div>
                         <div style="margin-left:auto; padding-right: 5px;">
-                            <iron-image style="height:100px; width:100px; " sizing="contain" src="build/images/objective.png"></iron-image>
+                            <iron-image style="height:100px; width:100px; " sizing="contain" src="../images/objective.png"></iron-image>
                         </div>
                     </div>
                 </div>
@@ -102,8 +102,8 @@
 
             
 
-            <!--Employment-->
-            <collapsible-header id="empColHead" header-text="Employment" on-click="playEmployAnima">
+            <!--Experience-->
+            <collapsible-header id="expColHeader" header-text="Experience" on-click="playEmployAnima">
                 <!--Employment Items-->
                 <div id="rippleCont">
                     <neon-animated-pages id="pages" selected="[[selectedNeonPage]]">
@@ -142,8 +142,8 @@
 
             
             
-            <!--Extra Ciricular-->
-            <collapsible-header header-text="Extra Ciricular">
+            <!--Extra Curricular-->
+            <collapsible-header header-text="Extra Curricular">
                 <div class="vertical layout">
                     <p class="content">I am some content</p>
                 </div>
@@ -197,7 +197,7 @@
             //Plays cascade animation of resumeContainer
             playEmployAnima:function()
             {
-                if (this.$.empColHead.opened)
+                if (this.$.expColHeader.opened)
                     this.$.resumeItemCont.playEntryAnimation();
             },
             //playSkillAnima:function()
