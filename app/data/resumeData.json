@@ -21,7 +21,7 @@
 			}
 		 ],
          "color":"#FFB59A",
-         "logo":"images/ameriprise_logo.png",
+         "logo":"build/images/ameriprise_logo.png",
 		 "logoLink":"https://www.ameriprise.com/auto-home-insurance/"
       },
       {
@@ -41,7 +41,7 @@
 			}
 		 ],
          "color":"#FF8558",
-         "logo":"images/glx_logo.png",
+         "logo":"build/images/glx_logo.png",
 		 "logoLink":"https://www.greenlifexpo.com/"
       },
       {
@@ -65,7 +65,7 @@
 			}
 		 ],
          "color":"#FFB59A",
-         "logo":"images/greenBayLogo2.png",
+         "logo":"build/images/greenBayLogo2.png",
 		 "logoLink":"https://www.uwgb.edu/"
       },
       {
@@ -85,7 +85,7 @@
 			}
 		 ],
          "color":"#FF8558",
-         "logo":"images/wi_dnr_logo.png",
+         "logo":"build/images/wi_dnr_logo.png",
 		 "logoLink":"http://dnr.wi.gov/topic/stateforests/blackriver/"
       }
    ]
