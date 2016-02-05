@@ -1,0 +1,22 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="skill-detail-item">
+    <template>
+        <style>:host{height:100%;display:block}.headerDiv{padding:5%;background:orange}.square{display:inline-block;height:150px;width:150px;margin:8px}.body{text-align:center;padding:8px}#exit-icon{position:absolute;top:0;right:0}</style><div id="headerDiv" class="headerDiv">
+            
+            <p>{{data.skillName}}</p>
+           
+            <paper-icon-button id="exit-icon" icon="icons:close" on-click="exitClick"></paper-icon-button>
+        </div>
+        <div class="body">
+            <div class="square" style$="background:[[data.color]]">Content</div>
+            <div class="square" style$="background:[[data.color]]">Content</div>
+            <div class="square" style$="background:[[data.color]]">Content</div>
+            <div class="square" style$="background:[[data.color]]">Content</div>
+        </div>
+        
+    </template>
+    
+</dom-module>
+
+<script>Polymer({is:"skill-detail-item",behaviors:[Polymer.NeonSharedElementAnimatableBehavior],properties:{sharedElements:{value:function(){return{hero:this.$.headerDiv}}},animationConfig:{value:function(){var e=Polymer.dom(this.root).querySelectorAll(".square"),a=Array.prototype.slice.call(e);return{entry:[{name:"hero-animation",id:"hero",toPage:this},{name:"cascaded-animation",animation:"transform-animation",transformFrom:"translateY(100%)",nodes:a}],exit:[{name:"slide-up-animation",node:this.$.headerDiv},{name:"cascaded-animation",animation:"transform-animation",transformTo:"translateY(60vh)",nodes:a}]}}}},exitClick:function(e){this.fire("exit-click")}});</script>

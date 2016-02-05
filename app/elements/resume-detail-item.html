@@ -1,0 +1,240 @@
+
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+	
+	
+<dom-module id="resume-detail-item">
+    <!--Start Element template-->
+    <template>
+        <!--Start Styling for resume-item element-->
+        <style>
+            :host {
+                display: block;
+                height: 100%;
+            }
+            .mainHeader {
+                font-weight: 700;
+                font-size: 2em;
+                margin-bottom: 0;
+            }
+
+            .header {
+                font-size: 2em;
+            }
+            .bold {
+                font-weight: 700;
+            }
+            #fixed {
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            #card {
+                position: absolute;
+                top: 5%;
+                left: 5%;
+                
+                width: 90%;
+                height: 90%;
+                background: rgba(255,255,255,0.5);
+            }
+
+            #back {
+                
+                border-bottom-right-radius: 15px;
+                background: rgba(255,255,255,0.5);
+            }
+
+            #back:hover {
+                background: rgba(255,255,255,0.6);
+            }
+
+            #logo {
+                width:100%;
+                position:relative;
+                right:2%;
+            }
+            
+            
+            #tabs {
+                background-color: #619EF3;
+                --paper-tabs-selection-bar-color: rgba(0,0,0,0.5);
+            }
+
+            .tab {
+                --paper-tab-ink: #9DC2F6;
+            }
+
+            #position {
+                margin-top: 0;
+                padding-left: 2em;
+                font-style:italic;
+            }
+            
+            /*If screen is bigger than 600px apply these rules.
+            Lets add the shadows back in for desktop, and exclude them for mobile(lag on ripple)*/
+            @media only screen and (min-width: 600px) {
+                #fixed {
+                    @apply(--shadow-elevation-4dp);
+                }
+
+                #card {
+                    @apply(--shadow-elevation-6dp);
+                }
+                
+
+            }
+          
+        </style>
+        <!--End Styling for resume-item element-->
+
+        
+        <!--Paper Background-->
+        <paper-material id="fixed"
+                        style$="background:[[colorFixed]];"
+                        elevation="0">
+
+            <paper-icon-button id="back" icon="icons:arrow-back" on-click="backClick"></paper-icon-button>
+
+        </paper-material>
+        <!--End Paper Background-->
+
+        <!--Paper Foreground-->
+        <div style="height:100%; width:100%;">
+            <paper-material id="card" elevation="0">
+                
+                <!--Job Title And Logo Header-->
+                <div style="border:2px black solid;" class="horizontal layout center">
+                    <div class="flex-3">
+                        <h1 class="mainHeader">{{jobName}}</h1>
+                        <p id="position">
+                            <span class="bold">Position:</span>
+                            {{position}}
+                        </p>
+                    </div>
+                    <div class="flex" >
+                        <a target="_blank" href="[[logoLink]]">
+                            <img id="logo" src$="[[logo]]"></img>
+                        </a>
+                    </div>
+                </div>
+                <!--End Job Title And Logo Header-->
+
+                <!--PAPER TABS-->
+                <paper-tabs id="tabs" selected="{{selected}}">
+                    <paper-tab class="tab">Description</paper-tab>
+                    <paper-tab class="tab">Highlights</paper-tab>
+                    <paper-tab class ="tab">Skills</paper-tab>
+                </paper-tabs>
+                <!--END PAPER TABS-->
+
+                <!--IRON PAGES (PAPER TABS CONTENT)-->
+                <iron-pages selected="{{selected}}">
+                    <div>
+                        <!--Position, Time, and Location-->
+                        <div class="horizontal layout">
+                            <div class="flex" style="word-wrap: break-word;">
+                                <p>
+                                    <span class="bold">Duration:</span> {{duration}}
+                                </p>
+                                <p>
+                                    <span class="bold">Location:</span>{{location}}
+                                </p>
+                                <p>
+                                    <span class="bold">Description:</span> {{descr}}
+                                </p>
+                            </div>
+                        </div>
+                        <!--End Position, Time, and Location-->
+                    </div>
+                    <div>
+                        <!--Main Experince Points-->
+                        <div>
+                            <template is="dom-repeat" items="{{experience}}">
+                                <p class="bold">{{item.header}}</p>
+                                <p>{{item.content}}</p>
+                            </template>
+                        </div>
+                        <!--End Main Experince Points-->
+                    </div>
+                    <div>
+                        <!--Skills Used on the Job-->
+                        <div>
+
+                        </div>
+                        <!--End Skills Used on the Job-->
+                    </div>
+                </iron-pages>
+                <!--END IRON PAGES (PAPER TABS CONTENT)-->
+            
+            </paper-material>
+        </div>
+        <!--End Paper Foreground-->
+
+    </template>
+	<!--End Element template-->
+
+    <script>
+        Polymer({
+            is: "resume-detail-item",
+
+            behaviors: [Polymer.NeonSharedElementAnimatableBehavior],
+
+            properties: {
+                animationConfig: {
+                    value: function () {
+                        return {
+                            'entry': [
+							{
+							    name: 'hero-animation',
+							    id: 'hero',
+							    toPage: this,
+							    timing: {
+							        delay: 150
+							    }
+							},
+							{
+							    name: 'ripple-animation',
+							    id: 'ripple',
+							    toPage: this
+							}],
+                            'exit': [{
+                                name: 'fade-out-animation',
+                                node: this.$.fixed
+                            }, {
+                                name: 'transform-animation',
+                                transformFrom: 'none',
+                                transformTo: 'translate(0px,-200vh) scale(0.9,1)',
+                                node: this.$.card
+                            }]
+                        }
+                    }
+                },
+                sharedElements: {
+                    value: function () {
+                        return {
+                            'hero': this.$.card,
+                            'ripple': this.$.fixed
+                        }
+                    }
+                }
+            },
+
+            backClick: function (event) {
+                this.fire('back-click');
+            },
+            ready:function()
+            {
+                this.selected = 0;
+            }
+
+        });
+
+    </script>
+
+</dom-module>
+	
+	

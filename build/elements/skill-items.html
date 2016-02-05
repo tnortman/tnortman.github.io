@@ -1,0 +1,17 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="skill-items">
+    <template>
+        <style>:host{position:relative;@apply(--layout-horizontal);@apply(--layout-center-center)}.skillItem{display:inline-block;box-sizing:border-box;width:100px;height:100px;margin:16px;border-radius:50%;position:relative}.skillName{margin:0;position:absolute;top:50%;left:50%;margin-right:-50%;transform:translate(-50%,-50%);color:#fff}</style><div>
+            <template is="dom-repeat" items="[[skillData.items]]">
+                <div id="skillItem" class="skillItem" on-click="skillClick" openneonpage$="{{index}}" style$="background:[[item.color]]">
+                    <p class="skillName">{{item.skillName}}</p>
+                </div>
+            </template>
+        </div>
+
+    </template>
+
+</dom-module>
+
+<script>Polymer({is:"skill-items",behaviors:[Polymer.NeonAnimationRunnerBehavior,Polymer.NeonSharedElementAnimatableBehavior],properties:{animationConfig:{value:function(){var e=Polymer.dom(this.root).querySelectorAll("skillItem"),i=Array.prototype.slice.call(e);return{entry:[{name:"cascaded-animation",animation:"scale-up-animation",nodes:i}],exit:[{name:"hero-animation",id:"hero",fromPage:this},{name:"cascaded-animation",animation:"scale-down-animation"}]}}}},skillClick:function(e){for(var i=e.target;0!=i.id.localeCompare("skillItem");)i=i.parentNode;this.sharedElements={hero:i};for(var n,a=[],t=document.getElementsByClassName("skillItem"),o=0;n=t[o];o++)n!==i&&a.push(n);this.animationConfig.exit[1].nodes=a;var r=(parseInt(i.getAttribute("openNeonPage"))+1).toString();this.fire("skill-click",{openNeonPage:r})},playEntryAnimation:function(){this.playAnimation("entry")}});</script>

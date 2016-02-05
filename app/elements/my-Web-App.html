@@ -1,0 +1,171 @@
+
+	<link rel="import" href="../../bower_components/polymer/polymer.html">
+	<dom-module id="my-Web-App">
+		<style>
+			.header{
+				font-family: 'Raleway', sans-serif;
+				font-weight: 700;
+				font-size: 3em;
+			}
+			.mainToolbar{
+				--paper-toolbar-background: #0367F0;
+				--paper-toolbar-sm-height: 150px;
+			}
+			.menuToolbar{
+				--paper-toolbar-background:#0367F0;
+				--paper-toolbar-sm-height: 150px;
+			}
+			.menu{
+				--paper-menu-selected-item:{
+					background: #cacaca;
+				}
+			}
+            #madeWithPolymer {
+                margin-top:50px;
+                width: 100%;
+                height: 200px;
+                text-align: center;
+                position: absolute;
+            }
+            #madeWithPolymer iron-image {
+                   width:100%;
+                   height:50%;
+            }
+            #madeWithPolymer p {
+                font-family: 'Raleway', sans-serif;
+                font-weight: 300;
+                font-size: 1em;
+            }
+
+            #scrollPanel {
+                background-color: #D4FD99;
+            }
+            #content{
+                height:100%;
+            }
+            /*If screen is more than 600px lets change the look*/
+            @media only screen and (min-width: 600px) {
+                
+				.menu paper-item:hover{
+						background:#F3F8FE;
+				}
+			}
+
+            @media only screen and (max-width: 600px){
+                #content {
+                    background-image: none !important;
+                }
+            }
+            
+		</style>
+		
+		<template>
+			<paper-drawer-panel>
+				
+				<!--Drawer for navigation-->
+				<paper-header-panel id="menuDrawer"  drawer>
+					
+					<!--Header for toolbar-->
+					<paper-toolbar class="menuToolbar">
+						<div id="menuHeader" class="header">Menu</div>
+					</paper-toolbar>
+					
+					<!--Menu-->
+					<paper-menu class="menu" on-click="navigate" attr-for-selected="page" selected="{{pageSelected}}">
+						
+						<paper-item page="about">
+							<paper-icon-button icon="social:person"></paper-icon-button>
+							<p>About Me</p>
+						</paper-item>
+						
+						<paper-item page="projects">
+							<paper-icon-button icon="image:style"></paper-icon-button>
+							<p>Projects</p>
+						</paper-item>
+						
+						<paper-item page="resume">
+							<paper-icon-button icon="icons:assignment"></paper-icon-button>
+							<p>Resume</p>
+						</paper-item>
+                        <paper-item page="contact">
+                            <paper-icon-button icon="communication:email"></paper-icon-button>
+                            <p>Contact</p>
+                        </paper-item>
+					</paper-menu>
+					<div id="madeWithPolymer">
+						<iron-image sizing='contain' src="../images/madeWithPolymer.png"></iron-image>
+						<p>Made with Polymer</p>
+					</div>
+				</paper-header-panel>
+				
+				
+				<!--Main body-->
+				<paper-scroll-header-panel main id="scrollPanel">
+					<paper-toolbar class="mainToolbar">
+						<paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+						<div class="header">Tim Nortman</div>
+					</paper-toolbar>
+					
+					<!--Main Content-->
+					<div id="content">
+						<iron-pages id="ironPageMainContent" attr-for-selected="data-route" selected="{{pageSelected}}">
+							<section data-route="about">
+								<about-content></about-content>
+							</section>
+							<section data-route="projects">
+								<projects-content></projects-content>
+							</section>
+							<section data-route="resume">
+								<resume-content></resume-content>
+							</section>
+                            <section data-route="contact">
+                                <contact-content></contact-content>
+                            </section>
+						</iron-pages>
+					</div>
+
+				</paper-scroll-header-panel>
+			
+			</paper-drawer-panel>
+		</template>
+        <script>
+            
+            Polymer({
+                is: "my-Web-App",
+                properties: {
+                    //the intial landing page
+                    pageSelected: {
+                        type: String,
+                        value: "about"
+                    }
+                },
+                listeners:{
+                    'iron-select': 'setBg'
+                },
+                navigate: function () {
+                    this.pageSelected = event.target.getAttribute("page");
+                },
+
+                //Sets the background image of the contact section
+                setBg: function (e) {
+                    var content = document.getElementById("content");
+
+                    if (this.pageSelected.localeCompare("contact") == 0)
+                    {
+                        content.style.backgroundImage = "url(images/contactImg.jpg)";
+                        content.style.backgroundSize = "cover";
+                        //Sets to right before stretching
+                        content.style.backgroundPosition = "100% 0%";
+                    }
+                    else
+                    {
+                        content.style.backgroundImage = "none";
+                    }
+                }
+
+                
+            });
+        </script>
+	</dom-module>
+	
+	

@@ -1,0 +1,18 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="skills-section">
+    <template>
+        <style>#skillsPages{height:500px}</style><iron-ajax auto url="../data/skillData.json" handle-as="json" last-response="{{skillData}}"></iron-ajax>
+        <div style="height:100%">
+            <neon-animated-pages id="skillsPages" selected="{{selectedNeonPage}}">
+                <skill-items id="skillItems" skill-data="[[skillData]]" on-skill-click="skillClick"></skill-items>
+                <template is="dom-repeat" items="[[skillData.items]]">
+                    <skill-detail-item data="{{item}}" on-exit-click="exitClick"></skill-detail-item>
+                </template>
+            </neon-animated-pages>
+        </div>
+    </template>
+
+</dom-module>
+
+<script>Polymer({is:"skills-section",properties:{selectedNeonPage:{type:Number,value:0}},skillClick:function(){this.selectedNeonPage=event.detail.openNeonPage,this.$.skillsPages.scrollIntoView({block:"start",behavior:"smooth"})},exitClick:function(e){this.selectedNeonPage=0},playSkillItemsEntryAnimation:function(){this.$.skillItems.playEntryAnimation()}});</script>
