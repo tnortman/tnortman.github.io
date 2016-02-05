@@ -69,4 +69,4 @@
 			
 			</paper-drawer-panel>
 		</template>
-        <script>Polymer({is:"my-Web-App",properties:{pageSelected:{type:String,value:"about"}},listeners:{"iron-select":"setBg"},navigate:function(){this.pageSelected=event.target.getAttribute("page")},setBg:function(e){var t=document.getElementById("content");0==this.pageSelected.localeCompare("contact")?(t.style.backgroundImage="url(images/contactImg.jpg)",t.style.backgroundSize="cover",t.style.backgroundPosition="100% 0%"):t.style.backgroundImage="none"}});</script></dom-module>
+        <script>Polymer({is:"my-Web-App",properties:{pageSelected:{type:String,value:"about"}},listeners:{"iron-select":"setBg"},navigate:function(){this.pageSelected=event.target.getAttribute("page")},setBg:function(e){var t=document.getElementById("content");0==this.pageSelected.localeCompare("contact")?(t.style.backgroundImage="url(build/images/contactImg.jpg)",t.style.backgroundSize="cover",t.style.backgroundPosition="100% 0%"):t.style.backgroundImage="none"}});</script></dom-module>
