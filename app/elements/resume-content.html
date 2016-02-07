@@ -58,6 +58,38 @@
                 opacity: 1;
                 transition-delay: 0s;
             }
+            
+            .extra-circ-card{
+                min-height: 300px;
+                min-width: 300px;
+               
+                max-width: 500px;
+                --paper-card-header-text:{
+                    background: rgba(255, 255, 255, 0.5);
+                    border-radius: 0px 15px 0px 0px;
+                    border-top: 3px solid black;
+                    border-right: 3px solid black;
+                }
+                
+            }
+            
+            #extra-circ-content{
+                @apply(--layout-horizontal);
+                @apply(--layout-center-justified);
+            }
+            #edu-content{
+                 @apply(--layout-horizontal);
+            }
+            
+            /*If screen is less than 600px lets change the look*/
+            @media only screen and (max-width: 925px){
+                #extra-circ-content {
+                    @apply(--layout-vertical);
+                }
+                #edu-content{
+                    @apply(--layout-vertical);
+                }
+            }
              
         </style>
 
@@ -103,9 +135,17 @@
             
             <!--Education-->
             <collapsible-header header-text="Education">
-                <div class="layout vertical flex">
-                    <p class="padding-left">University of Wisconsin - Green Bay</p>
+                <div id="edu-content">
+                    <div class="flex padding-left">
+                        <h1>University of Wisconsin - Green Bay</h1>
+                        <p style="padding-left: 2em;">Bachelor of Science: Computer Science</p>
+                        <p style="padding-left: 2em;">Minor: Philosophy</p>
+                        <p style="padding-left: 2em;">GPA: 3.88</p>
+                    </div>
                     
+                    <div class="end-justified" style="text-align:center;">
+                        <img src="../images/phoenix400g.png" style="width:200px;"></img>
+                    </div>
                 </div>
             </collapsible-header>
             <!--End Education-->
@@ -153,8 +193,27 @@
             
             <!--Extra Curricular-->
             <collapsible-header header-text="Extra Curricular">
-                <div class="vertical layout">
-                    <p class="content">I am some content</p>
+                <h1 class="padding-left">Volunteer</h1>
+                <div id="extra-circ-content">
+                    
+                    <!--UWGB - Community Service-->
+                    <paper-card class="extra-circ-card" style="margin: 2em;" heading="UW-GB Community Service" image="build/images/ywca.jpg">
+                        <div class="card-content">
+                            <h3>General Helper</h3>
+                            <p>Aided YWCA - Green Bay with cleanup of outdoor area such as raking and picking up garbage. 
+                                Additionally helped indoor teams clean rooms and sort through donated clothing.</p>
+                        </div>
+                    </paper-card>
+                    <!--End UWGB - Community Service-->
+                    <!--UWGB - Community Service-->
+                    <paper-card class="extra-circ-card" style="margin: 2em;" heading="Back To School Store" image="build/images/back-to-school.jpg">
+                        <div class="card-content">
+                            <h3>Personal Shopper</h3>
+                            <p>Volunteered as a Personal Shopper for Back To School Store in Green Bay, WI. Assited by taking children one-on-one 
+                                through a shopping center to gather school essentials, get a check-up from the dentist, and grab some new clothes.</p>
+                        </div>
+                    </paper-card>
+                    <!--End UWGB - Community Service-->
                 </div>
             </collapsible-header>
             <!--End Extra Ciricular-->
@@ -206,17 +265,19 @@
             //Plays cascade animation of resumeContainer
             playEmployAnima:function()
             {
-                if (this.$.expColHeader.opened)
+                //If we clicked on the header and it is opening , lets play the animation
+                if (this.$.expColHeader.opened && (event.target.className.includes("collapsible-header")))
                     this.$.resumeItemCont.playEntryAnimation();
             },
-            //playSkillAnima:function()
-            //{
-            //    if (this.$.skillColHead.opened)
-            //        this.$.skillsSection.playSkillItemsEntryAnimation();
-            //}
+            
+            playSkillAnima:function(event)
+            {
+                //If we clicked on the header and it is opening , lets play the animation 
+                if (this.$.skillColHead.opened && (event.target.className.includes("collapsible-header")))
+                    this.$.skillsSection.playSkillItemsEntryAnimation();
+            }
            
         });
-
     </script>
 
 </dom-module>

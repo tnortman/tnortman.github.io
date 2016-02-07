@@ -18,6 +18,7 @@
     "paper-toast": "PolymerElements/paper-toast#~1.1.1",
     "paper-tabs": "PolymerElements/paper-tabs#~1.2.5",
     "iron-collapse": "PolymerElements/iron-collapse#~1.0.5",
-    "paper-scroll-header-panel": "PolymerElements/paper-scroll-header-panel#~1.0.14"
+    "paper-scroll-header-panel": "PolymerElements/paper-scroll-header-panel#~1.0.14",
+    "paper-card": "PolymerElements/paper-card#^1.1.1"
   }
 }
