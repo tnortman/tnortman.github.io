@@ -10,7 +10,9 @@
                 margin-top: 10px;
                 margin-bottom: 10px;
             }
-
+            #about-content{
+                @apply(--layout-horizontal);
+            }
             .myPicImage {
                 width: 350px;
                 height: 350px;
@@ -28,6 +30,7 @@
             
             #about-txt{
                 margin-left: 1%;
+                margin-right: 1%;
                 margin-bottom: 2%;
                 background: rgba(255, 255, 255, 0.8);
                 border-radius: 15px 30px;
@@ -58,10 +61,15 @@
                     
                 }
             }
+            @media only screen and (max-width: 925px){
+                #about-content{
+                    @apply(--layout-vertical);
+                }
+            }
         </style>
 
         <paper-material elevation="1">
-            <div class="layout horizontal wrap">
+            <div id="about-content">
                 <div class="flex">
                     <p class="mainHeader">About Me</p>
                     <div id="about-txt">
@@ -80,7 +88,7 @@
                     </div>
                     
                 </div>
-                <div class="end-justified">
+                <div class="end-justified" style="margin:auto;">
                     <div class="myPicImage"></div>
                 </div>
             </div>

@@ -30,7 +30,7 @@
             }
         </style>
 
-        <div>
+        <div id="skillItemsContent">
             <template is="dom-repeat" items="[[skillData.items]]">
                 <div id="skillItem" 
                      class="skillItem"
@@ -56,13 +56,19 @@
         properties: {
             animationConfig: {
                 value: function () {
-                    var skillItems = Polymer.dom(this.root).querySelectorAll('skillItem');
-                    var skillsArray = Array.prototype.slice.call(skillItems);
+                    
+                    // this.$.skillItemsContent.addEventListener('skill-items-ready', function(){
+                    //     var skillItems = Polymer.dom(this.root).querySelectorAll("#skillItem");
+                    //     var skillsArray = Array.prototype.slice.call(skillItems);
+                    //     console.log(skillsArray);
+                    // });
+                    
+                    
                     return {
                         'entry': [{
                             name: 'cascaded-animation',
                             animation: 'scale-up-animation',
-                            nodes: skillsArray
+                            nodes: document.getElementsByClassName("skillItem")
                         }],
                         'exit': [{
                             name: 'hero-animation',
@@ -75,6 +81,10 @@
                     };
                 }
             }
+        },
+        domReady: function()
+        {
+            this.fire('skill-items-ready');   
         },
         skillClick: function (event) {
             //Set target to clicked (within this element)
