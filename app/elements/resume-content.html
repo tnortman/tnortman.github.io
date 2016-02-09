@@ -266,14 +266,14 @@
             playEmployAnima:function()
             {
                 //If we clicked on the header and it is opening , lets play the animation
-                if (this.$.expColHeader.opened && (event.target.className.includes("collapsible-header")))
+                if (this.$.expColHeader.opened && (event.target.className.indexOf('collapsible-header')!==-1))
                     this.$.resumeItemCont.playEntryAnimation();
             },
             
             playSkillAnima:function(event)
             {
                 //If we clicked on the header and it is opening , lets play the animation 
-                if (this.$.skillColHead.opened && (event.target.className.includes("collapsible-header")))
+                if (this.$.skillColHead.opened && (event.target.className.indexOf('collapsible-header')!==-1))
                     this.$.skillsSection.playSkillItemsEntryAnimation();
             }
            
