@@ -11,6 +11,54 @@
 	  {
          "skillName":"Polymer",
 		 "color": "#619EF5"
+      },
+	  {
+         "skillName":"HTML",
+		 "color": "#619EF5"
+      },
+	  {
+         "skillName":"CSS",
+		 "color": "#619EF5"
+      },
+	  {
+         "skillName":"JavaScript",
+		 "color": "#619EF5"
+      },
+	  {
+         "skillName":"SQL",
+		 "color": "#619EF5"
+      },
+	  {
+         "skillName":"PHP",
+		 "color": "#619EF5"
+      },
+	  {
+         "skillName":"Bash",
+		 "color": "#619EF5"
+      },
+	  {
+         "skillName":"JSON",
+		 "color": "#619EF5"
+      },
+	  {
+         "skillName":"JQuery",
+		 "color": "#619EF5"
+      },
+	  {
+         "skillName":"C++",
+		 "color": "#619EF5"
+      },
+	  {
+         "skillName":"AngularJS",
+		 "color": "#619EF5"
+      },
+	  {
+         "skillName":"Node.js",
+		 "color": "#619EF5"
+      },
+	  {
+         "skillName":"Swift",
+		 "color": "#619EF5"
       }
    ]
 }
