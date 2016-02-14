@@ -31,7 +31,7 @@ gulp.task('minifyscripts', function(){
 
 //minify new images
 gulp.task('imagemin', function(){
-   var imgSrc = './app/images/**/*',
+   var imgSrc = './app/images/**/**',
        imgDst = './build/images';
    gulp.src(imgSrc)
     .pipe(changed(imgDst))
