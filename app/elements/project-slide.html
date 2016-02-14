@@ -1,0 +1,71 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="project-slide">
+    <template>
+        <style>
+            #gitHubButton{
+                text-align: center;
+            }
+            #projName{
+                text-align: center;
+                width: 40%;
+                margin: auto;
+                margin-bottom: 10px;
+                padding: 10px;
+                background: #619EF3;
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+                
+            }
+            #viewOnGithub{
+                margin: 0;
+            }
+            .slideCont{
+                position: relative;
+    	        z-index: 0;
+            }
+            .textureBG{
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                opacity: 0.7;
+                width: 100%;
+                height: 100%;
+            }
+            
+        </style>
+            
+        <neon-animateable>
+            <div class="slideCont">
+                <!--Texutre BG-->
+                <div class="textureBG" style$="background-image: url({{textureBG}});"></div>
+                <!--Header-->
+                <h1 id="projName">{{projName}}</h1>
+                
+                <!--Custom Content-->
+                <content></content>
+                
+                <!--Footer-->
+                <div class="layout horizontal center-justified">
+                    <div class="layout vertical">
+                        <a id="gitHubButton" href$="{{githubLink}}" tabindex="-1">
+                            <paper-icon-button src="../images/GitHub-Mark-120px-plus.png" alt="GitHub"></paper-icon-button>
+                        </a>
+                        <p id="viewOnGithub" class="center-justified">View On Github</p>
+                    </div>
+                </div>
+            </div>
+        </neon-animateable>
+        
+    </template>
+    <script>
+        Polymer({
+            is: "project-slide"
+        });
+    </script>
+
+</dom-module>
+
