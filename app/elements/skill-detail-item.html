@@ -37,10 +37,12 @@
             <paper-icon-button id="exit-icon" icon="icons:close" on-click="exitClick"></paper-icon-button>
         </div>
         <div class="body">
-            <div class="square" style$="background:[[data.color]];">Content</div>
-            <div class="square" style$="background:[[data.color]];">Content</div>
-            <div class="square" style$="background:[[data.color]];">Content</div>
-            <div class="square" style$="background:[[data.color]];">Content</div>
+            <div class="square" style$="background:[[data.color]];">
+                <h4 style="border-bottom:1px solid black; margin-top:none;">Experience Level</h4>
+                <p>    
+                    {{data.experience}}
+                </p>
+            </div>
         </div>
         
     </template>

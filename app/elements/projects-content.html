@@ -55,21 +55,10 @@
                 @apply(--layout-center-justified);
                 margin: 5px;
             }
-            .test{
-                background: orange;
-                width: 200px;
-                height: 150px;
-                
-                margin: 15px;
-                border: 1px solid black;
+            .proj-desc{
+                margin-bottom: 15px;
             }
-            .test2{
-                background: greenyellow;
-                width: 200px;
-                height: 150px;
-                margin: 15px;
-                border: 1px solid black;
-            }
+            
             
             @media only screen and (max-width: 600px){
                 #backArrow{
@@ -79,10 +68,7 @@
                     @apply(--layout-vertical);
                     
                 }
-                .test, .test2{
-                    margin: auto;
-                    margin-bottom: 15px;
-                }
+                
             }            
         </style>
 
@@ -106,36 +92,47 @@
                             <p>
                                 This web app is a personal project I undertook to develop my web skills and develop my own brand.
                                 My web app is built with Polymer 1.0, HTML5, CSS3, and JavaScript. The key elements I wanted this web app to have were 1) Responsive Design (take a look on a mobile phone, or simply resize your browser) 2)Object-Oriented and 3) Easily Editable. Object-oriented and web are not commonly used in the same sentence. However, with Polymer 1.0 web-components make it easy to develop highly customizable and abstracted elements in web programming. In turn, this makes for easily editable websites. Take a look at the code, you might find some elements you've never heard of. And of course enjoy your stay!
-                                
                             </p>
                         </div>
                         <div class="flex-2">
-                            <img width="24%" height="25%" src="../images/ProjectContent/personalWebApp-about.png" style="border: 1px black solid">
-                            <img width="24%" height="25%" src="../images/ProjectContent/personalWebApp-projects.png" style="border: 1px black solid">
-                            <img width="24%" height="25%" src="../images/ProjectContent/personalWebApp-resume.png" style="border: 1px black solid">
-                            <img width="24%" height="25%" src="../images/ProjectContent/personalWebApp-contact.png" style="border: 1px black solid">
+                            <img width="23%" height="100%" src="../images/ProjectContent/personalWebApp-about.png" style="border: 1px black solid">
+                            <img width="23%" height="100%" src="../images/ProjectContent/personalWebApp-projects.png" style="border: 1px black solid">
+                            <img width="23%" height="100%" src="../images/ProjectContent/personalWebApp-resume.png" style="border: 1px black solid">
+                            <img width="23%" height="100%" src="../images/ProjectContent/personalWebApp-contact.png" style="border: 1px black solid">
                         </div>
                     </div>
                     <div class="row">
-                        <div></div>
-                        <div></div>
+                        <div>
+                            <h3>Skills Used</h3>
+                            <li>HTML, CSS, JavaScript</li>
+                            <li>Polymer 1.0</li>
+                            <li>JSON</li>
+                            <li>Gulp</li>
+                            <li>npm</li>
+                        </div>
                     </div>
                 </project-slide>
                 <project-slide proj-Name="Protein Helper" 
                                github-Link="https://github.com/tnortman/Protein_Helper" 
                                texture-bg="build/images/project-textures/004-Fantasy-Paper.png">
                     <div class="row">
-                        <div class="flex">
+                        <div class="flex proj-desc">
                             <h3>Project Description</h3>
-                            <p>Mobile app designed for Android. Allows users to scan in food items by UPC, 
+                            <p>
+                                Mobile app designed for Android. Allows users to scan in food items by UPC, 
                                 store in SQLite Database, and then query for specific results.
                             </p>
+                            <h3>Skills Used</h3>
+                            <li>C#</li>
+                            <li>SQLite</li>
+                            <li>Xamarin Studio</li>
+                            <li>Third Party Library Usage</li>
                         </div>
                         <div class="flex-2">
-                            <img width="24%" height="25%" src="../images/ProjectContent/proteinHelper-splash2.png">
-                            <img width="24%" height="25%" src="../images/ProjectContent/proteinHelper-fullInventory.png">
-                            <img width="24%" height="25%" src="../images/ProjectContent/proteinHelper-filters.png">
-                            <img width="24%" height="25%" src="../images/ProjectContent/proteinHelper-customItem.png">
+                            <img width="24%" height="100%" src="../images/ProjectContent/proteinHelper-splash2.png">
+                            <img width="24%" height="100%" src="../images/ProjectContent/proteinHelper-fullInventory.png">
+                            <img width="24%" height="100%" src="../images/ProjectContent/proteinHelper-filters.png">
+                            <img width="24%" height="100%" src="../images/ProjectContent/proteinHelper-customItem.png">
                         </div>
                     </div>
                     <div class="row">
@@ -147,11 +144,18 @@
                                github-Link="https://github.com/tnortman/ParkingMaster" 
                                texture-bg="build/images/project-textures/003-Brown-Paper.png">
                     <div class="row">
-                        <div class="flex">
+                        <div class="flex proj-desc">
                             <h3>Project Description</h3>
-                            <p>Desktop application to manage parking availability, ticket system, and online reservation for a parking garage. Developed as a team for a course’s final project. 
-                                
+                            <p>
+                                Desktop application to manage parking availability, ticket system, and online reservation for a parking garage. Developed as a team for a course’s final project.
                             </p>
+                            <h3>Skills Used</h3>
+                            <li>Java</li>
+                            <li>SQL</li>
+                            <li>Microsoft Access</li>
+                            <li>Agile Methodoligies</li>
+                            <li>Teamwork</li>
+                            
                         </div>
                         <div class="flex-2">
                             <img width="49%" height="50%" src="../images/ProjectContent/parkingMaster-homescreen.png">
@@ -170,14 +174,17 @@
                                github-Link="http://greenlifexpo.altervista.org" 
                                texture-bg="build/images/project-textures/001-Basik-Paper.png">
                     <div class="row">
-                        <div class="flex">
+                        <div class="flex proj-desc">
                             <h3>Project Description</h3>
                             <p>I designed, developed, and maintained this website for the non-profit organization GreenLifeXpo for nearly 4 years. The initial design occured in 2012 and maintenance ran until late 2015. The last current state of 
                                 'greenlifexpo.com' under my watch is archived; it may be viewed 
-                                <span><a href="http://www.greenlifexpo.altervista.org">here.</a></span>
-                                
-                                
+                                <span><a href="http://www.greenlifexpo.altervista.org">here.</a></span> 
                             </p>
+                            <h3>Skills Used</h3>
+                            <li>Adobe Muse</li>
+                            <li>Front End Design</li>
+                            <li>Web Content Management</li>
+                            <li>HTML, CSS, JavaScript</li>
                         </div>
                         <div class="flex-2">
                             <video width="100%" height="100%" autoplay loop>
