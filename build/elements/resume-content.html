@@ -92,6 +92,30 @@
             
             
             <collapsible-header header-text="Extra Curricular">
+                
+                <h1 class="padding-left">Outside School</h1>
+                <div id="extra-circ-content">
+                    
+                    <paper-card class="extra-circ-card" style="margin:2em" heading="UW-GB Pep Band" image="build/images/pep-band.jpg">
+                        <div class="card-content">
+                            <h3>Percussion Leader</h3>
+                            <p>I had the privilege of being a lead drummer all 4 years at UW-Green Bay. As a pep band, we played at all men's and
+                                women's basketball games. Even got to do some traveling to Louisiana and D.C. for March Madness!</p>
+                        </div>
+                    </paper-card>
+                    
+                    
+                    <paper-card class="extra-circ-card" style="margin:2em" heading="Intramurals" image="build/images/intramurals.jpg">
+                        <div class="card-content">
+                            <h3>Intramurals Captain</h3>
+                            <p>I played intramural sports all 4 years at UW-Green Bay. Activities included Flag Football, 
+                                Volleyball, Badminton, Soccer, Handball, and much more!
+                            </p>
+                        </div>
+                    </paper-card>
+                    
+                </div>
+                
                 <h1 class="padding-left">Volunteer</h1>
                 <div id="extra-circ-content">
                     
@@ -114,6 +138,8 @@
                     </paper-card>
                     
                 </div>
+                
+                
             </collapsible-header>
             
         </div>
@@ -122,4 +148,4 @@
         <paper-toast id="resumeDownloadToast" text="Resume Download started..."></paper-toast>
 </template>
 
-    <script>Polymer({is:"resume-content",properties:{selectedNeonPage:{type:Number,value:0}},tileClick:function(e){this.selectedNeonPage=e.detail.openCard,this.$.pages.style.height="750px",this.$.pages.scrollIntoView({block:"start",behavior:"smooth"})},backClick:function(e){this.selectedNeonPage=0,this.$.pages.style.height="100%"},downloadResume:function(){var e=document.createElement("a");e.download="Resume",e.href="../uploads/Resume(Test).docx",e.click(),this.$.resumeDownloadToast.open()},playEmployAnima:function(){this.$.expColHeader.opened&&-1!==event.target.className.indexOf("collapsible-header")&&this.$.resumeItemCont.playEntryAnimation()},playSkillAnima:function(e){this.$.skillColHead.opened&&-1!==e.target.className.indexOf("collapsible-header")&&this.$.skillsSection.playSkillItemsEntryAnimation()}});</script></dom-module>
+    <script>Polymer({is:"resume-content",properties:{selectedNeonPage:{type:Number,value:0}},tileClick:function(e){this.selectedNeonPage=e.detail.openCard,this.$.pages.style.height="750px",this.$.pages.scrollIntoView({block:"start",behavior:"smooth"})},backClick:function(e){this.selectedNeonPage=0,this.$.pages.style.height="100%"},downloadResume:function(){var e=document.createElement("a");e.download="Resume",e.href="build/uploads/Resume_TimNortman_2016.pdf",e.click(),this.$.resumeDownloadToast.open()},playEmployAnima:function(){this.$.expColHeader.opened&&-1!==event.target.className.indexOf("collapsible-header")&&this.$.resumeItemCont.playEntryAnimation()},playSkillAnima:function(e){this.$.skillColHead.opened&&-1!==e.target.className.indexOf("collapsible-header")&&this.$.skillsSection.playSkillItemsEntryAnimation()}});</script></dom-module>
