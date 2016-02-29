@@ -122,8 +122,8 @@
                     <div class="horizontal layout">
                         <div class="flex">
                             <p class="padding-left">
-                                Driven and dedicated, I am a computer science graduate seeking to help contribute to a team with my
-                                newfound knowledge and experience.
+                                Driven and dedicated, I am a computer science graduate seeking to contribute to a small-medium sized company and 
+                                help them make lasting impacts. I am mostly interested in front-end and mobile development, but I am always open to other positions.
                             </p>
                         </div>
                         <div style="margin-left:auto; padding-right: 5px;">
@@ -194,6 +194,30 @@
             
             <!--Extra Curricular-->
             <collapsible-header header-text="Extra Curricular">
+                <!--Outside School-->
+                <h1 class="padding-left">Outside School</h1>
+                <div id="extra-circ-content">
+                    <!--UWGB - Pep Band-->
+                    <paper-card class="extra-circ-card" style="margin: 2em;" heading="UW-GB Pep Band" image="build/images/pep-band.jpg">
+                        <div class="card-content">
+                            <h3>Percussion Leader</h3>
+                            <p>I had the privilege of being a lead drummer all 4 years at UW-Green Bay. As a pep band, we played at all men's and
+                                women's basketball games. Even got to do some traveling to Louisiana and D.C. for March Madness!</p>
+                        </div>
+                    </paper-card>
+                    <!--End UWGB - Community Service-->
+                    <!--UWGB - Community Service-->
+                    <paper-card class="extra-circ-card" style="margin: 2em;" heading="Intramurals" image="build/images/intramurals.jpg">
+                        <div class="card-content">
+                            <h3>Intramurals Captain</h3>
+                            <p>I played intramural sports all 4 years at UW-Green Bay. Activities included Flag Football, 
+                                Volleyball, Badminton, Soccer, Handball, and much more!
+                            </p>
+                        </div>
+                    </paper-card>
+                    <!--End UWGB - Community Service-->
+                </div>
+                <!-- Volunteer -->
                 <h1 class="padding-left">Volunteer</h1>
                 <div id="extra-circ-content">
                     
@@ -216,6 +240,8 @@
                     </paper-card>
                     <!--End UWGB - Community Service-->
                 </div>
+                <!--End Volunteer-->
+                
             </collapsible-header>
             <!--End Extra Ciricular-->
         </div>
@@ -259,7 +285,7 @@
                 
                 var link = document.createElement("a");
                 link.download = "Resume";
-                link.href = '../uploads/Resume(Test).docx';
+                link.href = 'build/uploads/Resume_TimNortman_2016.pdf';
                 link.click();
                 this.$.resumeDownloadToast.open();
             },
